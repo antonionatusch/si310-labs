@@ -11,7 +11,7 @@ Podrá solicitar una nueva rama para contribuir al desarrollo del repositorio si
 y cuando todos los demás colaboradores estén de acuerdo.
 
 A la rama develop solo irán aquellos aportes **100% funcionales** y que **no** interfieran con el desarrollo
-individual de las ramas de los colaboradores, pero que están pendientes de expansión o redućción, junto
+individual de las ramas de los colaboradores, pero que están pendientes de expansión o reducción, junto
 con los directorios de clase de los colaboradores.
 
 A la rama main irán todas aquellos aportes **100% funcionales** definitivos, que no necesitarán de 
