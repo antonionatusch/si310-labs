@@ -36,4 +36,5 @@ Cualquier duda, sugerencia, o recomendación deberá hacerse contactando de mane
 a los co-dueños:
 
 Dylan Uribe - a2022112008@estudiantes.upsa.edu.bo
+
 Antonio Natusch - a2022111958@estudiantes.upsa.edu.bo
