@@ -1,3 +1,11 @@
+
+<br />
+<div align ="center">
+  <a href="https://virtual.upsa.edu.bo/">
+    <img src ="https://virtual.upsa.edu.bo/pluginfile.php/1/theme_lambda/logo/1708129513/logo%20UPSA-universidad-03.png">
+  </a>
+</div>
+
 # si310-labs y sus reglas
 Repositorio que contiene los avances y distintas utilidades necesarias para las clases prácticas de E.D.A
 
