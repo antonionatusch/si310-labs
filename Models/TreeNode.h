@@ -1,23 +1,23 @@
 #include "../Types/types.h"
 
-class Node {
+class TreeNode {
     TipoElemento data;
-    Node *left;
-    Node *right;
+    TreeNode *left;
+    TreeNode *right;
 
 public:
 
-    explicit Node(TipoElemento &data);
+    explicit TreeNode(TipoElemento &data);
     void Visit() const;
 
     //Ya que son miembros privados, se debe acceder a ellos mediante funciones
-    Node* GetLeft();
-    Node* GetRight();
+    TreeNode* GetLeft();
+    TreeNode* GetRight();
     TipoElemento GetData() const;
 
     //Ya que son privados, se debe asignar con un set los valores
-    void SetLeft(Node* left);
-    void SetRight(Node *right);
+    void SetLeft(TreeNode* left);
+    void SetRight(TreeNode *right);
 };
 
 

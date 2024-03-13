@@ -5,18 +5,18 @@ BinarySearchTree::BinarySearchTree() {
 }
 
 //Privado
-Node* BinarySearchTree::Insert(Node *r, TipoElemento &data) {
+TreeNode* BinarySearchTree::Insert(TreeNode *r, TipoElemento &data) {
 
     if(r == nullptr){
-        return new Node(data);
+        return new TreeNode(data);
     }
 
     if(data < r->GetData()){
-        Node *left = Insert(r->GetLeft(), data);
+        TreeNode *left = Insert(r->GetLeft(), data);
         r->SetLeft(left);
     }
     else if(data > r->GetData()){
-        Node* right = Insert(r->GetRight(), data);
+        TreeNode* right = Insert(r->GetRight(), data);
         r->SetRight(right);
     }
 
@@ -24,7 +24,7 @@ Node* BinarySearchTree::Insert(Node *r, TipoElemento &data) {
 
 }
 
-void BinarySearchTree::Preorder(Node *r) {
+void BinarySearchTree::Preorder(TreeNode *r) {
     if(r != nullptr){
         r->Visit();
         BinarySearchTree::Preorder(r->GetLeft());
@@ -32,7 +32,7 @@ void BinarySearchTree::Preorder(Node *r) {
     }
 }
 
-void BinarySearchTree::InOrder(Node *r) {
+void BinarySearchTree::InOrder(TreeNode *r) {
     if(r != nullptr){
         BinarySearchTree::InOrder(r->GetLeft());
         r->Visit();
