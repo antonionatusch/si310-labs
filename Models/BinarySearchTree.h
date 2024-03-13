@@ -2,11 +2,11 @@
 
 class BinarySearchTree {
 private:
-    Node *root;
+    TreeNode *root;
 
-    Node* Insert(Node *r, TipoElemento &data);
-    void Preorder(Node* r);
-    void InOrder(Node *r);
+    TreeNode* Insert(TreeNode *r, TipoElemento &data);
+    void Preorder(TreeNode* r);
+    void InOrder(TreeNode *r);
 
 public:
     BinarySearchTree(); void Insert(TipoElemento data);

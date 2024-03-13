@@ -1,19 +1,19 @@
 #include "TreeNode.h"
 #include "iostream"
 
-Node::Node(TipoElemento &data) {
+TreeNode::TreeNode(TipoElemento &data) {
     this->data = data;
     left  = right = nullptr;
 }
 
-void Node::Visit() const {
+void TreeNode::Visit() const {
     std::cout<< data << " ";
 }
 
 //Miembros privados a través de funciones públicas
-TipoElemento Node::GetData() const {return data;}
-Node* Node::GetLeft() {return left;}
-Node* Node::GetRight() {return right;}
+TipoElemento TreeNode::GetData() const {return data;}
+TreeNode* TreeNode::GetLeft() {return left;}
+TreeNode* TreeNode::GetRight() {return right;}
 
-void Node::SetLeft(Node *left) {this->left = left;}
-void Node::SetRight(Node *right) {this->right = right;}
+void TreeNode::SetLeft(TreeNode *left) {this->left = left;}
+void TreeNode::SetRight(TreeNode *right) {this->right = right;}
