@@ -57,22 +57,25 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++14 -fdiagnostics-color=always"
+					"fragment" : "-g -fdiagnostics-color=always"
+				},
+				{
+					"fragment" : "-std=gnu++14"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "C:/Users/antho/CLionProjects/si310-labs/Models"
+					"path" : "C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/Models"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/antho/CLionProjects/si310-labs/structures"
+					"path" : "C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/structures"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/antho/CLionProjects/si310-labs/Types"
+					"path" : "C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/Types"
 				}
 			],
 			"language" : "CXX",

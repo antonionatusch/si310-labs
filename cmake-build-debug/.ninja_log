@@ -1,8 +1,15 @@
 # ninja log v5
 9	500	7320767471637589	CMakeFiles/si310_labs.dir/main.cpp.obj	3cadeb956cdb4613
+3	343	7320767571705567	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	536baf43fd8c79b4
+345	443	7320767573535554	si310_labs.exe	7dd1afb91f39d38d
 0	511	7320767471688481	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	fdce6fc41efe08e1
 14	526	7320767471949676	CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj	14453a1ee1f4613a
 5	542	7320767472130996	CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj	bfd2fbd40076552b
 22	553	7320767472261117	CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj	7012a261a1d342e9
-3	343	7320767571705567	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	536baf43fd8c79b4
-345	443	7320767573535554	si310_labs.exe	7dd1afb91f39d38d
+6	536	7320794247446050	CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj	52656dbaae22e211
+29	601	7320794247446050	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	e4fba87d5c30fdab
+1	633	7320794247640800	CMakeFiles/si310_labs.dir/main.cpp.obj	a6c31f3464ba5a1b
+10	634	7320794247785581	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	13f2ae8e2f4d7fbe
+13	635	7320794247905523	CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj	98773c0f3cf7ef6b
+22	636	7320794247915471	CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj	cb2f2069075ba6a9
+636	809	7320794250160016	si310_labs.exe	efc2325208ebbcb3

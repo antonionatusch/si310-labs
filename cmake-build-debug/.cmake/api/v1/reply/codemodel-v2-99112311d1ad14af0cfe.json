@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.27"
+						"string" : "3.24.2"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "si310_labs::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-si310_labs-Debug-5c7d476e526ee780098f.json",
+					"jsonFile" : "target-si310_labs-Debug-c79e8c4f0d89e8e8e0f7.json",
 					"name" : "si310_labs",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/antho/CLionProjects/si310-labs/cmake-build-debug",
-		"source" : "C:/Users/antho/CLionProjects/si310-labs"
+		"build" : "C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/cmake-build-debug",
+		"source" : "C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 6
+		"minor" : 4
 	}
 }
