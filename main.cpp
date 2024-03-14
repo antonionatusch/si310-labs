@@ -6,8 +6,7 @@
 
 int main(){ // Haga sus pruebas aquí
 
-    //testing merge
-    //xd
+   
 
 
     return 0;
