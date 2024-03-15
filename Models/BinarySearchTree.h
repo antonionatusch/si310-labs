@@ -9,9 +9,11 @@ private:
     void InOrder(TreeNode *r);
     void PostOrder(TreeNode *r);
 
+
 public:
     BinarySearchTree(); void Insert(TipoElemento data);
     void PreOrder(); void InOrder(); void PostOrder();
+    void MultiInsert(int n);
 };
 
 

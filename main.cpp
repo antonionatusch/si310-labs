@@ -4,19 +4,15 @@
 #include "Models/Stacks.h"
 #include "Models/LinkedList.h"
 int main(){
+    int n;
+   BinarySearchTree bst;
 
-    LinkedList lista;
-    lista.InsertarAlPrincipio(5);
-    lista.Mostrar();
+   std::cout<<"Digite la cantidad de elementos: ";
+   std::cin>>n;
 
-    BinarySearchTree bst;
-    bst.Insert(5);
-    bst.Insert(4);
-    std::cout<<"\n";
-    bst.InOrder();
-    std::cout<<"\n";
-    bst.PostOrder();
+   bst.MultiInsert(n);
 
+   bst.InOrder();
 
 
     return 0;

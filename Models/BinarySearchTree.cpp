@@ -24,6 +24,8 @@ TreeNode* BinarySearchTree::Insert(TreeNode *r, TipoElemento &data) {
 
 }
 
+
+
 void BinarySearchTree::Preorder(TreeNode *r) {
     if(r != nullptr){
         r->Visit();
@@ -63,4 +65,13 @@ void BinarySearchTree::InOrder() {
 
 void BinarySearchTree::PostOrder() {
     PostOrder(root);
+}
+
+void BinarySearchTree::MultiInsert(int n) {
+    TipoElemento tmp;
+    for (int i = 0; i < n; i++){
+        std::cout<<"Elemento "<<i+1<<": ";
+        std::cin>>tmp;
+        Insert(tmp);
+    }
 }
