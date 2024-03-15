@@ -6,9 +6,15 @@ TreeNode::TreeNode(TipoElemento &data) {
     left  = right = nullptr;
 }
 
+TreeNode::TreeNode(TipoElemento &data, bool bfEnabled) {
+    // implementación de factor de balanceo
+}
+
 void TreeNode::Visit() const {
     std::cout<< data << " ";
 }
+
+
 
 //Miembros privados a través de funciones públicas
 TipoElemento TreeNode::GetData() const {return data;}
