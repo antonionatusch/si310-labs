@@ -40,6 +40,14 @@ void BinarySearchTree::InOrder(TreeNode *r) {
     }
 }
 
+void BinarySearchTree::PostOrder(TreeNode *r) {
+    if(r != nullptr){
+        BinarySearchTree::PostOrder(r->GetLeft());
+        BinarySearchTree::PostOrder(r->GetRight());
+        r->Visit();
+    }
+}
+
 //Público
 void BinarySearchTree::Insert(TipoElemento data) {
     root = Insert(root, data);
@@ -51,4 +59,8 @@ void BinarySearchTree::PreOrder() {
 
 void BinarySearchTree::InOrder() {
     InOrder(root);
+}
+
+void BinarySearchTree::PostOrder() {
+    PostOrder(root);
 }

@@ -12,7 +12,11 @@ int main(){
     BinarySearchTree bst;
     bst.Insert(5);
     bst.Insert(4);
+    std::cout<<"\n";
     bst.InOrder();
+    std::cout<<"\n";
+    bst.PostOrder();
+
     // a
 
     return 0;
