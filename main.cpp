@@ -3,7 +3,7 @@
 #include "Models/Queues.h"
 #include "Models/Stacks.h"
 #include "Models/LinkedList.h"
-int main(){
+int main() {
     int n;
    BinarySearchTree bst;
 
