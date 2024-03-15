@@ -88,3 +88,5 @@ fabric.properties
 
 # en el main no se ejecuta nada !
 main.cpp
+
+.idea
