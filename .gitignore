@@ -85,8 +85,8 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-.idea
-cmake-build-debug
+.idea/*
+cmake-build-debug/*
 CMakeLists.txt
 **/cmake-build-debug
 **/CMakeCache.txt
