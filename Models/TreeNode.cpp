@@ -7,7 +7,7 @@ TreeNode::TreeNode(TipoElemento &data) {
 }
 
 TreeNode::TreeNode(TipoElemento &data, bool bfEnabled) {
-    // implementación de factor de balanceo
+    // implementación de factor de balanceo para arbol avl
 }
 
 void TreeNode::Visit() const {
