@@ -75,6 +75,13 @@ bool BinarySearchTree::isFull(TreeNode *r) {
 
 }
 
+int BinarySearchTree::NodeCount(TreeNode *r) {
+    if (r == nullptr)
+        return 0;
+    else
+        return 1 + NodeCount(r->GetLeft()) + NodeCount(r->GetRight());
+}
+
 //Público
 void BinarySearchTree::Insert(TipoElemento data) {
     root = Insert(root, data);
@@ -111,4 +118,8 @@ int BinarySearchTree::Height() {
 
 bool BinarySearchTree::isFull() {
     return isFull(root);
+}
+
+int BinarySearchTree::NodeCount() {
+    return NodeCount(root);
 }
