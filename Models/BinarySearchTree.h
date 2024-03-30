@@ -11,11 +11,13 @@ private:
     int Height(TreeNode *r);
     bool isFull(TreeNode *r);
     int NodeCount(TreeNode *r);
+    TreeNode* Find(TreeNode *subRoot, TipoElemento &searched);
 
 public:
     BinarySearchTree(); void Insert(TipoElemento data);
     void PreOrder(); void InOrder(); void PostOrder();
     void MultiInsert(int n); bool isEmpty(); int Height(); bool isFull(); int NodeCount();
+    TreeNode* Find(TipoElemento searched);
 };
 
 

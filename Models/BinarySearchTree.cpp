@@ -82,6 +82,17 @@ int BinarySearchTree::NodeCount(TreeNode *r) {
         return 1 + NodeCount(r->GetLeft()) + NodeCount(r->GetRight());
 }
 
+TreeNode *BinarySearchTree::Find(TreeNode *subRoot, TipoElemento &searched) {
+    if (subRoot == nullptr)
+        return nullptr;
+    else if (searched == subRoot->GetData())
+        return subRoot;
+    else if (searched < subRoot->GetData())
+        return Find(subRoot->GetLeft(), searched);
+    else
+        return Find(subRoot->GetRight(), searched);
+}
+
 //Público
 void BinarySearchTree::Insert(TipoElemento data) {
     root = Insert(root, data);
@@ -122,4 +133,8 @@ bool BinarySearchTree::isFull() {
 
 int BinarySearchTree::NodeCount() {
     return NodeCount(root);
+}
+
+TreeNode *BinarySearchTree::Find(TipoElemento searched) {
+    return Find(root, searched);
 }
