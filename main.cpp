@@ -16,6 +16,6 @@ int main() {
    bst.InOrder();
    std::cout<<"El árbol es de altura "<<bst.Height()<<"\n";
 
-   bst.isFull() ? std::cout<<"Arbol lleno" : std::cout<<"Arbol vacío";
+   bst.isFull() ? std::cout<<"Arbol lleno" : std::cout<<"Arbol no está lleno";
     return 0;
 }
