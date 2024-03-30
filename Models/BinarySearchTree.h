@@ -9,12 +9,13 @@ private:
     void InOrder(TreeNode *r);
     void PostOrder(TreeNode *r);
     int Height(TreeNode *r);
+    bool isFull(TreeNode *r);
 
 
 public:
     BinarySearchTree(); void Insert(TipoElemento data);
     void PreOrder(); void InOrder(); void PostOrder();
-    void MultiInsert(int n); bool isEmpty(); int Height();
+    void MultiInsert(int n); bool isEmpty(); int Height(); bool isFull();
 };
 
 
