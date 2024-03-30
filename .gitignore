@@ -9,7 +9,7 @@ install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
 _deps
-
+CMakeLists.txt
 ### C++ template
 # Compiled Object files
 *.slo
@@ -85,3 +85,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+cmake-build-debug
+.idea
+CMakeLists.txt
