@@ -4,12 +4,12 @@ class TreeNode {
     TipoElemento data;
     TreeNode *left;
     TreeNode *right;
-    int bf;
+
 
 public:
 
     explicit TreeNode(TipoElemento &data);
-    explicit TreeNode(TipoElemento &data, bool bfEnabled);
+
     void Visit() const;
 
     //Ya que son miembros privados, se debe acceder a ellos mediante funciones

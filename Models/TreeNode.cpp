@@ -6,10 +6,6 @@ TreeNode::TreeNode(TipoElemento &data) {
     left  = right = nullptr;
 }
 
-TreeNode::TreeNode(TipoElemento &data, bool bfEnabled) {
-    // implementación de factor de balanceo para arbol avl
-}
-
 void TreeNode::Visit() const {
     std::cout<< data << " ";
 }
