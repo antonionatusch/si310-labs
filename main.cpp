@@ -20,5 +20,9 @@ int main() {
 
    std::cout<<"El árbol tiene: "<<bst.NodeCount()<<" nodos.\n";
 
+   std::cout<<"El elemento 7 está en el nodo con dirección: "<<bst.Find(7)<<"\n";
+
+
+
     return 0;
 }
