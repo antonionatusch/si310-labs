@@ -97,3 +97,5 @@ cmake-build-debug/*
 **/*.cbp
 **/CMakeScripts
 **/compile_commands.json
+cmake-build-debug/.**
+cmake-build-debug

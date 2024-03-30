@@ -75,3 +75,7 @@ void BinarySearchTree::MultiInsert(int n) {
         Insert(tmp);
     }
 }
+
+bool BinarySearchTree::isEmpty() {
+    return root == nullptr;
+}
