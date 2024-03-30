@@ -7,14 +7,14 @@ int main() {
     int n;
    BinarySearchTree bst;
 
-    std::cout<<bst.isEmpty();
-   /* std::cout<<"Digite la cantidad de elementos: ";
+
+   std::cout<<"Digite la cantidad de elementos: ";
    std::cin>>n;
 
    bst.MultiInsert(n);
 
-   bst.InOrder(); */
-
+   bst.InOrder();
+   std::cout<<"El árbol es de altura "<<bst.Height();
 
     return 0;
 }

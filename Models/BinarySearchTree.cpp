@@ -50,6 +50,20 @@ void BinarySearchTree::PostOrder(TreeNode *r) {
     }
 }
 
+int BinarySearchTree::Height(TreeNode *r) {
+    if (r == nullptr)
+        return 0;
+    else
+    {
+        int leftHeight = Height(r->GetLeft());
+        int rightHeight = Height(r->GetRight());
+        if (leftHeight > rightHeight)
+            return leftHeight + 1; // +1 por la raiz
+        else
+            return rightHeight + 1;
+    }
+}
+
 //Público
 void BinarySearchTree::Insert(TipoElemento data) {
     root = Insert(root, data);
@@ -78,4 +92,8 @@ void BinarySearchTree::MultiInsert(int n) {
 
 bool BinarySearchTree::isEmpty() {
     return root == nullptr;
+}
+
+int BinarySearchTree::Height() {
+    return Height(root);
 }
