@@ -14,7 +14,8 @@ int main() {
    bst.MultiInsert(n);
 
    bst.InOrder();
-   std::cout<<"El árbol es de altura "<<bst.Height();
+   std::cout<<"El árbol es de altura "<<bst.Height()<<"\n";
 
+   bst.isFull() ? std::cout<<"Arbol lleno" : std::cout<<"Arbol vacío";
     return 0;
 }
