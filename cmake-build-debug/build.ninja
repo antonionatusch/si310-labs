@@ -91,6 +91,20 @@ build CMakeFiles/si310_labs.dir/main.cpp.obj: CXX_COMPILER__si310_labs_Debug C$:
   OBJECT_DIR = CMakeFiles\si310_labs.dir
   OBJECT_FILE_DIR = CMakeFiles\si310_labs.dir
 
+build CMakeFiles/si310_labs.dir/Models/Vertex.cpp.obj: CXX_COMPILER__si310_labs_Debug C$:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs$ ADE/si310-labs/Models/Vertex.cpp || cmake_object_order_depends_target_si310_labs
+  DEP_FILE = CMakeFiles\si310_labs.dir\Models\Vertex.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++14
+  INCLUDES = -I"C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/Models" -I"C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/structures" -I"C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/Types"
+  OBJECT_DIR = CMakeFiles\si310_labs.dir
+  OBJECT_FILE_DIR = CMakeFiles\si310_labs.dir\Models
+
+build CMakeFiles/si310_labs.dir/Models/UndirectedGraph.cpp.obj: CXX_COMPILER__si310_labs_Debug C$:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs$ ADE/si310-labs/Models/UndirectedGraph.cpp || cmake_object_order_depends_target_si310_labs
+  DEP_FILE = CMakeFiles\si310_labs.dir\Models\UndirectedGraph.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++14
+  INCLUDES = -I"C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/Models" -I"C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/structures" -I"C:/Users/dylan_tmut0bm/Documents/ClionProyects/Labs ADE/si310-labs/Types"
+  OBJECT_DIR = CMakeFiles\si310_labs.dir
+  OBJECT_FILE_DIR = CMakeFiles\si310_labs.dir\Models
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target si310_labs
@@ -99,7 +113,7 @@ build CMakeFiles/si310_labs.dir/main.cpp.obj: CXX_COMPILER__si310_labs_Debug C$:
 #############################################
 # Link the executable si310_labs.exe
 
-build si310_labs.exe: CXX_EXECUTABLE_LINKER__si310_labs_Debug CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj CMakeFiles/si310_labs.dir/main.cpp.obj
+build si310_labs.exe: CXX_EXECUTABLE_LINKER__si310_labs_Debug CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj CMakeFiles/si310_labs.dir/main.cpp.obj CMakeFiles/si310_labs.dir/Models/Vertex.cpp.obj CMakeFiles/si310_labs.dir/Models/UndirectedGraph.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\si310_labs.dir
