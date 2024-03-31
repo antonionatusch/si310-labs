@@ -1,6 +1,7 @@
 #include "../Types/types.h"
 
 class TreeNode {
+private:
     TipoElemento data;
     TreeNode *left;
     TreeNode *right;

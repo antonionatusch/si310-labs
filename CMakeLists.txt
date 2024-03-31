@@ -20,4 +20,6 @@ add_executable(si310_labs
         Models/TreeNode.h
         structures/Node.h
         Types/types.h
-        main.cpp)
+        main.cpp
+        Models/AvlNode.h
+        Models/AvlNode.cpp)
