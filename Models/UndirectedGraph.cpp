@@ -1,7 +1,3 @@
-//
-// Created by dylan_tmut0bm on 30/3/2024.
-//
-
 #include "UndirectedGraph.h"
 #include "iostream"
 
@@ -46,7 +42,7 @@ void UndirectedGraph::CreateVertex(char name) {
         for (int i = 0; i < v; ++i) {
             if (!adj[i]) {
                 adj[i] = new Vertex(name);
-                std::cout << "Vertice " << name << " creado." << std::endl;
+                std::cout << "Vertice " << name << " creado" << std::endl;
                 return;
             }
         }
@@ -60,37 +56,35 @@ void UndirectedGraph::CreateEdge(char origin, char destiny) {
     bool des = VertexExists(destiny);
 
     if(!ori || !des){
-        std::cout<<"An Edge can't be created, a vertex doesn't exists.";
+        std::cout<<"An Edge can't be created, a vertex doesn't exists." << std::endl;
+        std::cout<< "ORIGIN: " << origin << " " << "DESTINY: " << destiny << std::endl;
         return;
     }
 
     int n = GetPosition(origin);
     int k = GetPosition(destiny);
 
-    //Ya que es bidireccional se insertará primero en la lista de origen
-
-    auto*p = new Vertex;
-    p->name = adj[n]->name;
+    //Insertar al final origen
+    auto* p = new Vertex;
+    p->name = adj[k]->name;
     p->next = nullptr;
 
     Vertex* temp = adj[n];
-    while (temp->next){
+    while (temp->next) {
         temp = temp->next;
     }
-
     temp->next = p;
 
-    //Insertar lo mismo para el destino
-
-    auto*q = new Vertex;
-    q->name = adj[k]->name;
+    //Insertar al final destino
+    auto* q = new Vertex;
+    q->name = adj[n]->name;
     q->next = nullptr;
 
-    Vertex* temp2 = adj[k];
-    while (temp2->next) {
-        temp2 = temp2->next;
-    }
-    temp2->next = q;
+     Vertex* temp2 = adj[k];
+     while (temp2->next) {
+         temp2 = temp2->next;
+     }
+     temp2->next = q;
 
 }
 
@@ -99,8 +93,12 @@ void UndirectedGraph::ShowList() {
     for (int i = 0; i < v; ++i) {
         Vertex* actual = adj[i];
         std::cout << "Vertice " << (char)('A' + i) << ": ";
+        if (actual) {
+            std::cout << actual->name;
+            actual = actual->next;
+        }
         while (actual) {
-            std::cout << actual->name << " ";
+            std::cout << "->" << actual->name;
             actual = actual->next;
         }
         std::cout << std::endl;

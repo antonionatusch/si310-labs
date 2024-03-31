@@ -7,7 +7,7 @@
 
 int main(){
 
-     UndirectedGraph g(3); // Crear un grafo con 5 vértices
+     UndirectedGraph g(5);
 
     // Crear vértices
     g.CreateVertex('A');
@@ -15,11 +15,18 @@ int main(){
     g.CreateVertex('C');
 
     // Agregar aristas entre vértices existentes
-    g.CreateEdge('A', 'B');
+    g.CreateEdge('A', 'D');
     g.CreateEdge('B', 'C');
     g.CreateEdge('A', 'C');
+    g.CreateEdge('D', 'C');
 
+    g.CreateVertex('D');
+    g.CreateVertex('E');
+    g.CreateVertex('F');
 
+    g.CreateEdge('D', 'E');
+    g.CreateEdge('D', 'A');
+    g.CreateEdge('D', 'F');
 
     // Imprimir el grafo
     g.ShowList();
