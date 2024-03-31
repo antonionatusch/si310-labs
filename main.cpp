@@ -15,18 +15,18 @@ int main(){
     g.CreateVertex('C');
 
     // Agregar aristas entre vértices existentes
-    g.CreateEdge('A', 'D');
-    g.CreateEdge('B', 'C');
-    g.CreateEdge('A', 'C');
-    g.CreateEdge('D', 'C');
+    g.AddEdge('A', 'D');
+    g.AddEdge('B', 'C');
+    g.AddEdge('A', 'C');
+    g.AddEdge('D', 'C');
 
     g.CreateVertex('D');
     g.CreateVertex('E');
     g.CreateVertex('F');
 
-    g.CreateEdge('D', 'E');
-    g.CreateEdge('D', 'A');
-    g.CreateEdge('D', 'F');
+    g.AddEdge('D', 'E');
+    g.AddEdge('D', 'A');
+    g.AddEdge('D', 'F');
 
     // Imprimir el grafo
     g.ShowList();

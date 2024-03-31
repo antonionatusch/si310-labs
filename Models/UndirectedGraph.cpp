@@ -50,41 +50,30 @@ void UndirectedGraph::CreateVertex(char name) {
     std::cout << "Can't create more vertices" << std::endl;
 }
 
-void UndirectedGraph::CreateEdge(char origin, char destiny) {
+void UndirectedGraph::Insert(int origin, int destiny) {
+    auto* p = new Vertex;
+    p->name = adj[destiny]->name;
+    p->next = nullptr;
 
-    bool ori = VertexExists(origin);
-    bool des = VertexExists(destiny);
+    Vertex* temp = adj[origin];
+    while (temp->next) {
+        temp = temp->next;
+    }
+    temp->next = p;
+}
 
-    if(!ori || !des){
+void UndirectedGraph::AddEdge(char origin, char destiny) {
+
+    if(!VertexExists(origin) || !VertexExists(destiny)){
         std::cout<<"An Edge can't be created, a vertex doesn't exists." << std::endl;
         std::cout<< "ORIGIN: " << origin << " " << "DESTINY: " << destiny << std::endl;
         return;
     }
 
-    int n = GetPosition(origin);
-    int k = GetPosition(destiny);
-
     //Insertar al final origen
-    auto* p = new Vertex;
-    p->name = adj[k]->name;
-    p->next = nullptr;
-
-    Vertex* temp = adj[n];
-    while (temp->next) {
-        temp = temp->next;
-    }
-    temp->next = p;
-
+    Insert(GetPosition(origin), GetPosition(destiny));
     //Insertar al final destino
-    auto* q = new Vertex;
-    q->name = adj[n]->name;
-    q->next = nullptr;
-
-     Vertex* temp2 = adj[k];
-     while (temp2->next) {
-         temp2 = temp2->next;
-     }
-     temp2->next = q;
+    Insert(GetPosition(destiny), GetPosition(origin));
 
 }
 

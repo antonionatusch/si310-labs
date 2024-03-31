@@ -6,12 +6,14 @@ class UndirectedGraph {
 private:
     int v;  //number of vertices
     Vertex** adj; //adjacency matrix
+    void Insert(int origin, int destiny);
+    int GetPosition(char name);
 
 public:
     explicit UndirectedGraph(int v); ~UndirectedGraph();
     void CreateVertex(char name); bool VertexExists(char name);
-    void CreateEdge(char origin, char destiny);
-    int GetPosition(char name); void ShowList();
+    void AddEdge(char origin, char destiny);
+    void ShowList();
 };
 
 
