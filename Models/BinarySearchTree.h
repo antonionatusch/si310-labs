@@ -13,6 +13,7 @@ private:
     int NodeCount(TreeNode *r);
     TreeNode* Find(TreeNode *subRoot, TipoElemento &searched);
     TreeNode* Delete(TreeNode *subRoot, TipoElemento &data);
+    TreeNode* Replace(TreeNode* current);
 
 public:
     BinarySearchTree(); void Insert(TipoElemento data);

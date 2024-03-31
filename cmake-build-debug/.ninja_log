@@ -60,3 +60,9 @@
 449	526	7335447469117755	si310_labs.exe	7dd1afb91f39d38d
 2	243	7335447671687831	CMakeFiles/si310_labs.dir/main.cpp.obj	3cadeb956cdb4613
 243	324	7335447672438143	si310_labs.exe	7dd1afb91f39d38d
+37	592	7336214614084575	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	536baf43fd8c79b4
+44	593	7336214614084575	CMakeFiles/si310_labs.dir/main.cpp.obj	3cadeb956cdb4613
+4	597	7336214614134599	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	fdce6fc41efe08e1
+598	977	7336214617907166	si310_labs.exe	7dd1afb91f39d38d
+3	1022	7336215263399699	CMakeFiles/si310_labs.dir/main.cpp.obj	3cadeb956cdb4613
+1023	1353	7336215266676341	si310_labs.exe	7dd1afb91f39d38d

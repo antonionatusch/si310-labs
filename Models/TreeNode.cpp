@@ -19,3 +19,5 @@ TreeNode* TreeNode::GetRight() {return right;}
 
 void TreeNode::SetLeft(TreeNode *left) {this->left = left;}
 void TreeNode::SetRight(TreeNode *right) {this->right = right;}
+
+void TreeNode::SetData(TipoElemento newData) {data = newData;}

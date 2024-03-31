@@ -93,8 +93,52 @@ TreeNode *BinarySearchTree::Find(TreeNode *subRoot, TipoElemento &searched) {
         return Find(subRoot->GetRight(), searched);
 }
 
-TreeNode *BinarySearchTree::Delete(TreeNode *subRoot, TipoElemento &data) {
+TreeNode *BinarySearchTree::Replace(TreeNode *current) {
+    TreeNode *a, *p;
+    p = current;
+    a = current->GetLeft(); // rama de nodos menores
+    while (a->GetRight() != nullptr)
+    {
+        p = a;
+        a = a->GetRight();
+    }
+    // copia en current el valor (data) del nodo apuntado por a
+    current->SetData(a->GetData());
+    if (p == a) // si a es el hijo izquierdo de current
+        p->SetLeft(a->GetLeft());
+    else
+        p->SetRight(a->GetRight());
+    return a;
+}
 
+TreeNode *BinarySearchTree::Delete(TreeNode *subRoot, TipoElemento &data) {
+    if(isEmpty())
+        std::cout<<"No se ha encontrado el nodo con el dato provisto.";
+    else if (data < subRoot->GetData())
+    {
+        TreeNode* newLeft;
+        newLeft = Delete(subRoot->GetLeft(), data);
+        subRoot->SetLeft(newLeft);
+    }
+    else if (data > subRoot->GetData()){
+        TreeNode* newRight;
+        newRight = Delete(subRoot->GetRight(), data);
+        subRoot->SetRight(newRight);
+    } // proceso de búsqueda según el libro: si el dato es menor, va iterando recursivamente ya sea en el subárbol izq o derecho hasta encontrarlo
+    else // cuando encuentra el nodo:
+    {
+        TreeNode *nodeToDelete;
+        nodeToDelete = subRoot;
+        if (nodeToDelete->GetLeft() == nullptr)
+            subRoot = nodeToDelete->GetRight();
+        else if (nodeToDelete->GetRight() == nullptr)
+            subRoot = nodeToDelete->GetLeft();
+        else
+        {   // si tiene rama izq y derecha
+            Replace(nodeToDelete);
+        }
+    }
+    return subRoot;
 }
 
 //Público
@@ -141,4 +185,8 @@ int BinarySearchTree::NodeCount() {
 
 TreeNode *BinarySearchTree::Find(TipoElemento searched) {
     return Find(root, searched);
+}
+
+void BinarySearchTree::Delete(TipoElemento data) {
+    root = Delete(root, data);
 }

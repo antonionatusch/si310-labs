@@ -20,6 +20,7 @@ public:
     //Ya que son privados, se debe asignar con un set los valores
     void SetLeft(TreeNode* left);
     void SetRight(TreeNode *right);
+    void SetData(TipoElemento newData);
 };
 
 
