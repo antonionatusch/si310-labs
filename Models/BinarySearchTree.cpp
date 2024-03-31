@@ -93,6 +93,10 @@ TreeNode *BinarySearchTree::Find(TreeNode *subRoot, TipoElemento &searched) {
         return Find(subRoot->GetRight(), searched);
 }
 
+TreeNode *BinarySearchTree::Delete(TreeNode *subRoot, TipoElemento &data) {
+
+}
+
 //Público
 void BinarySearchTree::Insert(TipoElemento data) {
     root = Insert(root, data);
