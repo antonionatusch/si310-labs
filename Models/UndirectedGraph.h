@@ -15,7 +15,7 @@ public:
     explicit UndirectedGraph(int v); ~UndirectedGraph();
     void CreateVertex(char name); bool VertexExists(char name);
     void AddEdge(char origin, char destiny); void DeleteVertex(char name);
-    void ShowList();
+    void ShowList(); void DeleteEdge(char origin, char destiny);
 };
 
 

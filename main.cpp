@@ -24,7 +24,13 @@ int main(){
     // Imprimir el grafo
     g.ShowList();
 
-    g.DeleteVertex('A');
+    g.DeleteVertex('D');
+    g.CreateVertex('F');
+    g.AddEdge('F', 'A');
+
+    g.ShowList();
+
+    g.DeleteEdge('F', 'A');
 
     g.ShowList();
 

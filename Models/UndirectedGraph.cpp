@@ -88,7 +88,7 @@ void UndirectedGraph::DeleteVertex(char name) {
         std::cout << "El vertice que quiere eliminar no existe!!! " << std::endl;
     }
     else{
-        for(int i = 0; i < v; i++){
+        for(int i = 0; i < numV; i++){
             if(adj[i]->name == name){
                 Vertex* temp = adj[i];
                 Vertex* aux = adj[i];
@@ -135,6 +135,47 @@ void UndirectedGraph::ReorganizeList() {
     // Rellena los elementos restantes con nullptr
     for (int i = newPosition; i < v; ++i) {
         adj[i] = nullptr;
+    }
+}
+
+void UndirectedGraph::DeleteEdge(char origin, char destiny) {
+    if(!VertexExists(origin) || !VertexExists(destiny)){
+        std::cout << "No se puede eliminar la arista al menos un vértice no existe." << std::endl;
+    } else{
+        for (int i = 0; i < numV; ++i) {
+            if(adj[i]->name == origin || adj[i]->name == destiny){
+                if(adj[i]->name == origin){
+                    Vertex* aux = adj[i];
+                    Vertex* temp = adj[i];
+
+                    while (aux->next != nullptr){
+                        temp =temp->next;
+                        if(temp->name == destiny){
+                            aux->next = temp->next;
+                            delete(temp);
+                            break;
+                        }
+                        aux = temp;
+                    }
+                }
+                else{
+                    if(adj[i]->name == destiny){
+                        Vertex* aux = adj[i];
+                        Vertex* temp = adj[i];
+
+                        while (aux->next != nullptr){
+                            temp =temp->next;
+                            if(temp->name == origin){
+                                aux->next = temp->next;
+                                delete(temp);
+                                break;
+                            }
+                            aux = temp;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
