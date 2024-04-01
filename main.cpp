@@ -24,9 +24,9 @@ int main(){
     // Imprimir el grafo
     g.ShowList();
 
-    //g.DeleteVertex('B');
+    g.DeleteVertex('A');
 
-    //g.ShowList();
+    g.ShowList();
 
 
 

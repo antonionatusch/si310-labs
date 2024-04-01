@@ -98,7 +98,7 @@ void UndirectedGraph::DeleteVertex(char name) {
                     delete(temp);
                     temp = aux;
                 }
-                delete(aux);
+                adj[i] = nullptr;
             } else{
                 Vertex* temp = adj[i];
                 Vertex* aux = adj[i];
@@ -115,21 +115,27 @@ void UndirectedGraph::DeleteVertex(char name) {
             }
         }
     }
-    v--;
+    numV--;
+    ReorganizeList();
 }
 
 void UndirectedGraph::ReorganizeList() {
 
-    int k;
-    for(int i=0; i < numV; i++){
-        if(!adj[i]){
-            k=i;
-            while (adj[k]){
-                adj[i] = adj[i+1];
-            }
+    int newPosition = 0;
+    // Itera sobre todos los vértices restantes
+    for (int i = 0; i < v; ++i) {
+        // Si el vértice actual no es nulo
+        if (adj[i] != nullptr) {
+            // Mueve la lista de adyacencia al nuevo índice
+            adj[newPosition] = adj[i];
+            // Incrementa la posición donde copiar la lista de adyacencia
+            newPosition++;
         }
     }
-
+    // Rellena los elementos restantes con nullptr
+    for (int i = newPosition; i < v; ++i) {
+        adj[i] = nullptr;
+    }
 }
 
 void UndirectedGraph::ShowList() {
@@ -141,7 +147,7 @@ void UndirectedGraph::ShowList() {
     else{
         for (int i = 0; i < numV; i++) {
             Vertex* actual = adj[i];
-            std::cout << "Vertice " << (char)('A' + i) << ": ";
+            std::cout << "Vertice " << adj[i]->name << ": ";
             if (actual) {
                 std::cout << actual->name;
                 actual = actual->next;
