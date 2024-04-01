@@ -6,6 +6,7 @@ private:
     AvlNode *left;
     AvlNode *right;
     int balanceFactor;
+
 public:
     explicit AvlNode(TipoElemento &data);
 
@@ -14,10 +15,12 @@ public:
     AvlNode* GetRight();
     TipoElemento GetData() const;
     void Visit() const;
+    int GetBalanceFactor();
     //Ya que son privados, se debe asignar con un set los valores
     void SetLeft(AvlNode* left);
     void SetRight(AvlNode *right);
     void SetData(TipoElemento newData);
+    void SetBalanceFactor(int newBalanceFactor);
 
 };
 

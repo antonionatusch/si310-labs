@@ -21,3 +21,7 @@ void AvlNode::SetLeft(AvlNode *left) {this->left = left;}
 void AvlNode::SetRight(AvlNode *right) {this->right = right;}
 
 void AvlNode::SetData(TipoElemento newData) {data = newData;}
+
+int AvlNode::GetBalanceFactor() {return balanceFactor;}
+
+void AvlNode::SetBalanceFactor(int newBalanceFactor) {this->balanceFactor = newBalanceFactor;}
