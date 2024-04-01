@@ -7,12 +7,13 @@
 
 int main(){
 
-     UndirectedGraph g(5);
+     UndirectedGraph g(4);
 
     // Crear vértices
     g.CreateVertex('A');
     g.CreateVertex('B');
     g.CreateVertex('C');
+    g.CreateVertex('D');
 
     // Agregar aristas entre vértices existentes
     g.AddEdge('A', 'D');
@@ -20,16 +21,12 @@ int main(){
     g.AddEdge('A', 'C');
     g.AddEdge('D', 'C');
 
-    g.CreateVertex('D');
-    g.CreateVertex('E');
-    g.CreateVertex('F');
-
-    g.AddEdge('D', 'E');
-    g.AddEdge('D', 'A');
-    g.AddEdge('D', 'F');
-
     // Imprimir el grafo
     g.ShowList();
+
+    //g.DeleteVertex('B');
+
+    //g.ShowList();
 
 
 

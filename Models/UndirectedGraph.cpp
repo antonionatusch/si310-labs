@@ -3,6 +3,7 @@
 
 UndirectedGraph::UndirectedGraph(int v) {
     this->v = v;
+    numV = -1;
 
     adj = new Vertex * [v];
     for(int i = 0; i < v; i++){
@@ -39,10 +40,14 @@ bool UndirectedGraph::VertexExists(char name) {
 
 void UndirectedGraph::CreateVertex(char name) {
     if(!VertexExists(name)){
+        if(numV == -1){
+            numV = 0;
+        }
         for (int i = 0; i < v; ++i) {
             if (!adj[i]) {
                 adj[i] = new Vertex(name);
                 std::cout << "Vertice " << name << " creado" << std::endl;
+                numV++;
                 return;
             }
         }
@@ -77,19 +82,76 @@ void UndirectedGraph::AddEdge(char origin, char destiny) {
 
 }
 
+void UndirectedGraph::DeleteVertex(char name) {
+
+    if(!VertexExists(name)){
+        std::cout << "El vertice que quiere eliminar no existe!!! " << std::endl;
+    }
+    else{
+        for(int i = 0; i < v; i++){
+            if(adj[i]->name == name){
+                Vertex* temp = adj[i];
+                Vertex* aux = adj[i];
+                while (aux->next != nullptr){
+                    temp = temp->next;
+                    aux->next = temp->next;
+                    delete(temp);
+                    temp = aux;
+                }
+                delete(aux);
+            } else{
+                Vertex* temp = adj[i];
+                Vertex* aux = adj[i];
+
+                while (aux->next != nullptr){
+                    temp =temp->next;
+                    if(temp->name == name){
+                        aux->next = temp->next;
+                        delete(temp);
+                        break;
+                    }
+                    aux = temp;
+                }
+            }
+        }
+    }
+    v--;
+}
+
+void UndirectedGraph::ReorganizeList() {
+
+    int k;
+    for(int i=0; i < numV; i++){
+        if(!adj[i]){
+            k=i;
+            while (adj[k]){
+                adj[i] = adj[i+1];
+            }
+        }
+    }
+
+}
+
 void UndirectedGraph::ShowList() {
     std::cout << "Lista de adyacencia del grafo:" << std::endl;
-    for (int i = 0; i < v; ++i) {
-        Vertex* actual = adj[i];
-        std::cout << "Vertice " << (char)('A' + i) << ": ";
-        if (actual) {
-            std::cout << actual->name;
-            actual = actual->next;
-        }
-        while (actual) {
-            std::cout << "->" << actual->name;
-            actual = actual->next;
-        }
-        std::cout << std::endl;
+
+    if(numV == -1){
+        std::cout << "No existe el grafo!!!" << std::endl;
     }
+    else{
+        for (int i = 0; i < numV; i++) {
+            Vertex* actual = adj[i];
+            std::cout << "Vertice " << (char)('A' + i) << ": ";
+            if (actual) {
+                std::cout << actual->name;
+                actual = actual->next;
+            }
+            while (actual) {
+                std::cout << "->" << actual->name;
+                actual = actual->next;
+            }
+            std::cout << std::endl;
+        }
+    }
+
 }
