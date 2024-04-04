@@ -7,9 +7,9 @@ private:
     int v;  //number of vertices
     int numV; //curren number of vertices
     Vertex** adj; //adjacency matrix
-    void Insert(int origin, int destiny);
-    int GetPosition(char name);
-    void ReorganizeList();
+    void InsertEdge(int origin, int destiny); // Cuando se llama a la función pública "AddEdge" (Código más legible)
+    int GetPosition(char name); // Obtenemos la posición de un vértice en la función "AddEdge"
+    void ReorganizeList(); //Reorganizamos la lista luego de borrar un vértice "DeleteVertex"
 
 public:
     explicit UndirectedGraph(int v); ~UndirectedGraph();

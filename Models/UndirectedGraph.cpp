@@ -55,7 +55,7 @@ void UndirectedGraph::CreateVertex(char name) {
     std::cout << "Can't create more vertices" << std::endl;
 }
 
-void UndirectedGraph::Insert(int origin, int destiny) {
+void UndirectedGraph::InsertEdge(int origin, int destiny) {
     auto* p = new Vertex;
     p->name = adj[destiny]->name;
     p->next = nullptr;
@@ -76,9 +76,9 @@ void UndirectedGraph::AddEdge(char origin, char destiny) {
     }
 
     //Insertar al final origen
-    Insert(GetPosition(origin), GetPosition(destiny));
+    InsertEdge(GetPosition(origin), GetPosition(destiny));
     //Insertar al final destino
-    Insert(GetPosition(destiny), GetPosition(origin));
+    InsertEdge(GetPosition(destiny), GetPosition(origin));
 
 }
 
@@ -89,6 +89,9 @@ void UndirectedGraph::DeleteVertex(char name) {
     }
     else{
         for(int i = 0; i < numV; i++){
+            //Si en la Lista de Adyacencia el primer valor es el vértice a eliminar
+            //Entonces borramos toda la lista de adyacencia de dicho vértice y al final la posición donde estaba nuestro vértice
+            //apuntará a null
             if(adj[i]->name == name){
                 Vertex* temp = adj[i];
                 Vertex* aux = adj[i];
@@ -100,6 +103,8 @@ void UndirectedGraph::DeleteVertex(char name) {
                 }
                 adj[i] = nullptr;
             } else{
+                //Si no se encuentra en la primera posición el vértice a eliminar, se busca si existe
+                //la conexión entre dicho vértice y otro y se borra la arista.
                 Vertex* temp = adj[i];
                 Vertex* aux = adj[i];
 
@@ -116,6 +121,10 @@ void UndirectedGraph::DeleteVertex(char name) {
         }
     }
     numV--;
+    //como el apuntador del vértice queda en null, esa posición no lo podemos dejar así.
+    //Lo que se hace es extraer la siguiente posición donde estaba el vértice borrado para que ocupe su lugar
+    //y así hasta que no haya más vértices, es como eliminar un elemento de un vector
+    //y recorrer los siguientes valores de adelantes hacia atrás
     ReorganizeList();
 }
 
