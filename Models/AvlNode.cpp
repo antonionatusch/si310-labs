@@ -7,8 +7,9 @@ AvlNode::AvlNode(TipoElemento &data) {
     balanceFactor = 0;
 }
 
-void AvlNode::Visit() const {
+void AvlNode::Visit()  {
     std::cout<< data << " ";
+    std::cout<< "Factor de equilibrio: "<<this->balanceFactor<<"\n";
 }
 
 
@@ -25,3 +26,4 @@ void AvlNode::SetData(TipoElemento newData) {data = newData;}
 int AvlNode::GetBalanceFactor() {return balanceFactor;}
 
 void AvlNode::SetBalanceFactor(int newBalanceFactor) {this->balanceFactor = newBalanceFactor;}
+

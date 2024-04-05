@@ -14,13 +14,14 @@ public:
     AvlNode* GetLeft();
     AvlNode* GetRight();
     TipoElemento GetData() const;
-    void Visit() const;
+    void Visit();
     int GetBalanceFactor();
     //Ya que son privados, se debe asignar con un set los valores
     void SetLeft(AvlNode* left);
     void SetRight(AvlNode *right);
     void SetData(TipoElemento newData);
     void SetBalanceFactor(int newBalanceFactor);
+
 
 };
 

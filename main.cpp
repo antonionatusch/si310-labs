@@ -6,10 +6,10 @@
 #include "Models/AvlTree.h"
 int main() {
     int n;
-   BinarySearchTree bst;
+
    AvlTree avl;
-
-
+   avl.MultiInsert(5);
+    avl.InOrder();
 
 
     return 0;
