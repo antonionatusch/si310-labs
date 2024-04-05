@@ -9,30 +9,20 @@ int main(){
 
      UndirectedGraph g(4);
 
-    // Crear vértices
     g.CreateVertex('A');
     g.CreateVertex('B');
     g.CreateVertex('C');
     g.CreateVertex('D');
 
-    // Agregar aristas entre vértices existentes
     g.AddEdge('A', 'D');
-    g.AddEdge('B', 'C');
+    g.AddEdge('C', 'D');
+    g.AddEdge('A', 'B');
     g.AddEdge('A', 'C');
-    g.AddEdge('D', 'C');
-
-    // Imprimir el grafo
-    g.ShowList();
-
-    g.DeleteVertex('D');
-    g.CreateVertex('F');
-    g.AddEdge('F', 'A');
 
     g.ShowList();
 
-    g.DeleteEdge('F', 'A');
+    g.BFS('C');
 
-    g.ShowList();
 
 
 

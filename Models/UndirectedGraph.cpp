@@ -1,5 +1,8 @@
 #include "UndirectedGraph.h"
 #include "iostream"
+#include "queue"
+#include "vector"
+#include "algorithm"
 
 UndirectedGraph::UndirectedGraph(int v) {
     this->v = v;
@@ -186,6 +189,68 @@ void UndirectedGraph::DeleteEdge(char origin, char destiny) {
             }
         }
     }
+}
+
+void UndirectedGraph::BFS(char startVertex) {
+
+    if (!VertexExists(startVertex)) {
+        std::cout << "El vértice " << startVertex << " no existe en el grafo." << std::endl;
+        return;
+    }
+
+    //Create a queue for BFS
+    std::queue<char> bfsQueue;
+    //Create an Array for visited vertices
+    std::vector<char> visited;
+    //Create a queue for BFS values that are going to be showed
+    std::queue<char> bfsQueueAux;
+
+    //Started Vertex marked as visited and added to queue
+    bfsQueue.push(adj[GetPosition(startVertex)]->name);
+    visited.push_back(adj[GetPosition(startVertex)]->name);
+    bfsQueueAux.push(adj[GetPosition(startVertex)]->name);
+
+    //Continue until queue is empty
+    while (!bfsQueue.empty()){
+
+        //show queue
+        std::cout << "COLA: ";
+        while (!bfsQueueAux.empty()){
+            std::cout << bfsQueueAux.front();
+            bfsQueueAux.pop();
+        }
+
+        char aux = bfsQueue.front();
+        bfsQueue.pop();
+        std::cout << " Procesado: " << aux << std::endl;
+
+        //Ya que se eliminó la cola auxiliar tenemos que copiar los elementos de la cola principal a la aux
+        std::queue<char> bfsCopia = bfsQueue;
+        while (!bfsCopia.empty()){
+            char element = bfsCopia.front();
+            bfsQueueAux.push(element);
+            bfsCopia.pop();
+        }
+
+        //Get all adjacent vertices from that vertex
+
+        Vertex* temp = adj[GetPosition(aux)];
+        temp = temp->next;
+
+        while (temp){
+            if(std::find(visited.begin(), visited.end(),temp->name) != visited.end()) {
+                bfsQueue.push(temp->name);
+                bfsQueueAux.push(temp->name);
+            }
+            temp = temp->next;
+        }
+
+        visited.push_back(aux);
+    }
+
+    std::cout << "Cola vacía";
+
+
 }
 
 void UndirectedGraph::ShowList() {

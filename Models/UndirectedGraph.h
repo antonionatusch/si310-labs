@@ -16,6 +16,7 @@ public:
     void CreateVertex(char name); bool VertexExists(char name);
     void AddEdge(char origin, char destiny); void DeleteVertex(char name);
     void ShowList(); void DeleteEdge(char origin, char destiny);
+    void BFS(char startVertex);
 };
 
 
