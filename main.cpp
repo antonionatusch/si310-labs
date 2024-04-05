@@ -7,7 +7,7 @@
 
 int main(){
 
-     UndirectedGraph g(4);
+     UndirectedGraph g(6);
 
     g.CreateVertex('A');
     g.CreateVertex('B');
@@ -21,11 +21,10 @@ int main(){
 
     g.ShowList();
 
+    std::cout<< "BFS" << std::endl;
     g.BFS('C');
-
-
-
-
+    std::cout<< "DFS" << std::endl;
+    g.DFS('C');
 
     return 0;
 }

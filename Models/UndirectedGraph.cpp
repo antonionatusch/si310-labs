@@ -3,6 +3,7 @@
 #include "queue"
 #include "vector"
 #include "algorithm"
+#include "stack"
 
 UndirectedGraph::UndirectedGraph(int v) {
     this->v = v;
@@ -194,7 +195,7 @@ void UndirectedGraph::DeleteEdge(char origin, char destiny) {
 void UndirectedGraph::BFS(char startVertex) {
 
     if (!VertexExists(startVertex)) {
-        std::cout << "El vértice " << startVertex << " no existe en el grafo." << std::endl;
+        std::cout << "El vertice " << startVertex << " no existe en el grafo." << std::endl;
         return;
     }
 
@@ -233,6 +234,48 @@ void UndirectedGraph::BFS(char startVertex) {
             temp = temp->next;
         }
     }
+
+    delete[] visited;
+}
+
+void UndirectedGraph::DFS(char startVertex) {
+    if (!VertexExists(startVertex)) {
+        std::cout << "El vértice " << startVertex << " no existe en el grafo." << std::endl;
+        return;
+    }
+
+    bool *visited = new bool[numV];
+    for (int i = 0; i < numV; ++i) {
+        visited[i] = false;
+    }
+
+    std::stack<char> stack;
+
+    stack.push(startVertex);
+
+    while (!stack.empty()) {
+        char currentPos = stack.top();
+        stack.pop();
+
+        // Visitamos el nodo actual solo si no ha sido visitado previamente
+        if (!visited[GetPosition(currentPos)]) {
+            std::cout << "Visiting vertex " << currentPos << std::endl;
+            visited[GetPosition(currentPos)] = true;
+
+            // Obtenemos los nodos adyacentes del nodo actual y los agregamos a la pila si no han sido visitados
+            Vertex* temp = adj[GetPosition(currentPos)]->next;
+            while (temp != nullptr) {
+                int nextPos = GetPosition(temp->name);
+                if (!visited[nextPos]) {
+                    std::cout << "Going to vertex " << temp->name << " from vertex " << currentPos << std::endl;
+                    stack.push(temp->name);
+                }
+                temp = temp->next;
+            }
+        }
+    }
+
+    delete[] visited;
 }
 
 void UndirectedGraph::ShowList() {
