@@ -198,59 +198,41 @@ void UndirectedGraph::BFS(char startVertex) {
         return;
     }
 
+    //start with all vertices as not visited
+    bool *visited = new bool[numV];
+    for(int i = 0; i <numV; i++ ){
+        visited[i] = false;
+    }
+
     //Create a queue for BFS
     std::queue<char> bfsQueue;
-    //Create an Array for visited vertices
-    std::vector<char> visited;
-    //Create a queue for BFS values that are going to be showed
-    std::queue<char> bfsQueueAux;
 
     //Started Vertex marked as visited and added to queue
     bfsQueue.push(adj[GetPosition(startVertex)]->name);
-    visited.push_back(adj[GetPosition(startVertex)]->name);
-    bfsQueueAux.push(adj[GetPosition(startVertex)]->name);
+    visited[GetPosition(startVertex)] = true;
 
     //Continue until queue is empty
     while (!bfsQueue.empty()){
 
-        //show queue
-        std::cout << "COLA: ";
-        while (!bfsQueueAux.empty()){
-            std::cout << bfsQueueAux.front();
-            bfsQueueAux.pop();
-        }
-
         char aux = bfsQueue.front();
         bfsQueue.pop();
-        std::cout << " Procesado: " << aux << std::endl;
-
-        //Ya que se eliminó la cola auxiliar tenemos que copiar los elementos de la cola principal a la aux
-        std::queue<char> bfsCopia = bfsQueue;
-        while (!bfsCopia.empty()){
-            char element = bfsCopia.front();
-            bfsQueueAux.push(element);
-            bfsCopia.pop();
-        }
 
         //Get all adjacent vertices from that vertex
-
         Vertex* temp = adj[GetPosition(aux)];
         temp = temp->next;
 
+        std::cout << "Checking adjacent vertices from that vertex: " << aux << std::endl;
         while (temp){
-            if(std::find(visited.begin(), visited.end(),temp->name) != visited.end()) {
+            int adjIndex = GetPosition(temp->name);
+            if(!visited[adjIndex]) {
+                //marked as visited
+                std::cout << "Visit and enqueue " << temp->name << std::endl;
+                visited[adjIndex] = true;
                 bfsQueue.push(temp->name);
-                bfsQueueAux.push(temp->name);
             }
             temp = temp->next;
         }
-
-        visited.push_back(aux);
     }
-
-    std::cout << "Cola vacía";
-
-
 }
 
 void UndirectedGraph::ShowList() {
