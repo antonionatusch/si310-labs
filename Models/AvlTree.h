@@ -15,6 +15,7 @@ private:
     AvlNode* Delete(AvlNode* subRoot, TipoElemento &data);
     int Height(AvlNode *r);
     bool isFull(AvlNode *r);
+    int NodeCount(AvlNode *r);
 
 public:
     AvlTree();
@@ -28,5 +29,6 @@ public:
     bool isEmpty();
     int Height();
     int isFull();
+    int NodeCount();
 };
 

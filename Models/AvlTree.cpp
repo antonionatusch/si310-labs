@@ -275,6 +275,12 @@ bool AvlTree::isFull(AvlNode *r) {
 
 }
 
+int AvlTree::NodeCount(AvlNode *r) {
+    if (r == nullptr)
+        return 0;
+    else
+        return 1 + NodeCount(r->GetLeft()) + NodeCount(r->GetRight());
+}
 
 
 // Público
@@ -322,6 +328,10 @@ int AvlTree::isFull() {
 
 int AvlTree::Height() {
     return Height(root);
+}
+
+int AvlTree::NodeCount() {
+    return NodeCount(root);
 }
 
 
