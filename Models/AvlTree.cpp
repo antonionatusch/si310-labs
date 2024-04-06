@@ -191,6 +191,17 @@ void AvlTree::PostOrder(AvlNode *r) {
 
 }
 
+AvlNode *AvlTree::Find(AvlNode *subRoot, TipoElemento &searched) {
+    if (subRoot == nullptr)
+        return nullptr;
+    else if (searched == subRoot->GetData())
+        return subRoot;
+    else if (searched < subRoot->GetData())
+        return Find(subRoot->GetLeft(), searched);
+    else
+        return Find(subRoot->GetRight(), searched);
+}
+
 // Público
 void AvlTree::Insert(TipoElemento data) {
     bool heightChanged = false;
@@ -216,6 +227,10 @@ void AvlTree::InOrder() {
 
 void AvlTree::PostOrder() {
     PostOrder(root);
+}
+
+AvlNode *AvlTree::Find(TipoElemento searched) {
+    return Find(root, searched);
 }
 
 

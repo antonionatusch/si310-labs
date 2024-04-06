@@ -10,6 +10,7 @@ private:
     void Preorder(AvlNode *r);
     void InOrder(AvlNode *r);
     void PostOrder(AvlNode *r);
+    AvlNode* Find(AvlNode* subRoot, TipoElemento &searched);
 public:
     AvlTree();
     void Insert(TipoElemento data);
@@ -17,5 +18,6 @@ public:
     void Preorder();
     void InOrder();
     void PostOrder();
+    AvlNode* Find(TipoElemento searched);
 };
 
