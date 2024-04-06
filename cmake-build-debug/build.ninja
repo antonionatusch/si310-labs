@@ -105,6 +105,20 @@ build CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj: CXX_COMPILER__si310_labs
   OBJECT_DIR = CMakeFiles\si310_labs.dir
   OBJECT_FILE_DIR = CMakeFiles\si310_labs.dir\Models
 
+build CMakeFiles/si310_labs.dir/Models/VanillaTreeNode.cpp.obj: CXX_COMPILER__si310_labs_unscanned_Debug C$:/Users/antho/CLionProjects/si310-labs/Models/VanillaTreeNode.cpp || cmake_object_order_depends_target_si310_labs
+  DEP_FILE = CMakeFiles\si310_labs.dir\Models\VanillaTreeNode.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/antho/CLionProjects/si310-labs/Models -IC:/Users/antho/CLionProjects/si310-labs/structures -IC:/Users/antho/CLionProjects/si310-labs/Types
+  OBJECT_DIR = CMakeFiles\si310_labs.dir
+  OBJECT_FILE_DIR = CMakeFiles\si310_labs.dir\Models
+
+build CMakeFiles/si310_labs.dir/Models/BinaryTree.cpp.obj: CXX_COMPILER__si310_labs_unscanned_Debug C$:/Users/antho/CLionProjects/si310-labs/Models/BinaryTree.cpp || cmake_object_order_depends_target_si310_labs
+  DEP_FILE = CMakeFiles\si310_labs.dir\Models\BinaryTree.cpp.obj.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/antho/CLionProjects/si310-labs/Models -IC:/Users/antho/CLionProjects/si310-labs/structures -IC:/Users/antho/CLionProjects/si310-labs/Types
+  OBJECT_DIR = CMakeFiles\si310_labs.dir
+  OBJECT_FILE_DIR = CMakeFiles\si310_labs.dir\Models
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target si310_labs
@@ -113,7 +127,7 @@ build CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj: CXX_COMPILER__si310_labs
 #############################################
 # Link the executable si310_labs.exe
 
-build si310_labs.exe: CXX_EXECUTABLE_LINKER__si310_labs_Debug CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj CMakeFiles/si310_labs.dir/main.cpp.obj CMakeFiles/si310_labs.dir/Models/AvlNode.cpp.obj CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj
+build si310_labs.exe: CXX_EXECUTABLE_LINKER__si310_labs_Debug CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj CMakeFiles/si310_labs.dir/main.cpp.obj CMakeFiles/si310_labs.dir/Models/AvlNode.cpp.obj CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj CMakeFiles/si310_labs.dir/Models/VanillaTreeNode.cpp.obj CMakeFiles/si310_labs.dir/Models/BinaryTree.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\si310_labs.dir
