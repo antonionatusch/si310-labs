@@ -21,6 +21,7 @@ public:
     void MultiInsert(int n); bool isEmpty(); int Height(); bool isFull(); int NodeCount();
     TreeNode* Find(TipoElemento searched);
     void Delete(TipoElemento data);
+    void Menu();
 };
 
 

@@ -30,5 +30,6 @@ public:
     int Height();
     int isFull();
     int NodeCount();
+    static void Menu();
 };
 

@@ -334,6 +334,72 @@ int AvlTree::NodeCount() {
     return NodeCount(root);
 }
 
+void AvlTree::Menu() {
+    char op;
+    AvlTree avl;
+    do
+    {
+        std::cout<<"MENU DE ÁRBOL AVL \n";
+        std::cout<<"1.- Insertar elementos \n";
+        std::cout<<"2.- Recorrido PreOrden \n";
+        std::cout<<"3.- Recorrido InOrden \n";
+        std::cout<<"4.- Recorrido PostOrden \n";
+        std::cout<<"5.- Averiguar la altura del árbol \n";
+        std::cout<<"6.- Borrar un elemento dada una clave \n";
+        std::cout<<"7.- Encontrar la cantidad de nodos \n";
+        std::cout<<"Digite una opción para ejecutarla o s para salir...\n";
+        std::cin>>op;
+
+        switch (op)
+        {
+            case '1':
+                int n;
+                std::cout<<"Digite la cantidad de elementos a insertar: ";
+                std::cin>>n;
+                avl.MultiInsert(n);
+                break;
+
+            case '2':
+                std::cout<<"Recorriendo PreOrden... \n";
+                avl.Preorder();
+                break;
+
+            case '3':
+                std::cout<<"Recorriendo InOrden... \n";
+                avl.InOrder();
+                break;
+
+            case '4':
+                std::cout<<"Recorrido PostOrden... \n";
+                avl.PostOrder();
+                break;
+
+            case '5':
+                std::cout<<"La altura del árbol es... "<<avl.Height()<<"\n";
+                break;
+
+            case '6':
+                int keyToDelete;
+                std::cout<<"Digite la clave a eliminar: ";
+                std::cin>>keyToDelete;
+                std::cout<<"Previamente, la clave se encontraba en el nodo con dirección: "<<avl.Find(keyToDelete)<<"\n";
+                std::cout<<"Eliminando... \n"; avl.Delete(keyToDelete);
+                std::cout<<"Si tiene dirección 0, se eliminó correctamente. \n Dirección: "<<avl.Find(keyToDelete)<<"\n";
+            case '7':
+                std::cout<<"La cantidad de nodos presente en el árbol es: "<<avl.NodeCount()<<"\n";
+            case 's':
+                std::cout<<"Hasta luego...";
+                break;
+            default:
+                std::cout<<"Opción no existente, intente de nuevo...";
+                break;
+        }
+
+    }
+    while(op != 's');
+
+}
+
 
 
 
