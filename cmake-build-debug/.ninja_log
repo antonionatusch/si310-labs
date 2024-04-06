@@ -1,8 +1,14 @@
 # ninja log v5
-2	280	7335406261934547	CMakeFiles/si310_labs.dir/main.cpp.obj	a6c31f3464ba5a1b
+3	472	7340834290109200	CMakeFiles/si310_labs.dir/main.cpp.obj	a6c31f3464ba5a1b
 29	601	7320794247446050	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	e4fba87d5c30fdab
-289	449	7335406263551003	si310_labs.exe	efc2325208ebbcb3
+528	684	7340834292230420	si310_labs.exe	4179492e75dae787
 9	289	7335406261965124	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	13f2ae8e2f4d7fbe
 13	635	7320794247905523	CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj	98773c0f3cf7ef6b
 6	536	7320794247446050	CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj	52656dbaae22e211
+17	151	7335514179639459	CMakeFiles/si310_labs.dir/Models/vertex.cpp.obj	1565be5fd631606f
+9	84	7335634897901902	CMakeFiles/si310_labs.dir/Models/Vertex.cpp.obj	c52faea24f1f7ce4
 22	636	7320794247915471	CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj	cb2f2069075ba6a9
+7	484	7340850574350901	build.ninja	d7ba632f27d4f5ef
+6	119	7335520803535959	CMakeFiles/si310_labs.dir/Models/UndrirectedGraph.cpp.obj	2848a68638bef332
+9	528	7340834290731447	CMakeFiles/si310_labs.dir/Models/UndirectedGraph.cpp.obj	73e3c90fa38c13d1
+12	474	7340834290119197	CMakeFiles/si310_labs.dir/Models/UndirectedWeightedGraph.cpp.obj	c96c3d1ad12e27e6
