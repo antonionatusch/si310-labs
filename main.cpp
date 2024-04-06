@@ -22,7 +22,6 @@ int main() {
             std::cin.ignore(256,'\n');
             std::cin>>op;
         }
-
         switch (op) {
             case 1:
                 AvlTree().Menu();
