@@ -191,6 +191,54 @@ void AvlTree::PostOrder(AvlNode *r) {
 
 }
 
+AvlNode *AvlTree::Replace(AvlNode *current) {
+    AvlNode *a, *p;
+    p = current;
+    a = current->GetLeft(); // rama de nodos menores
+    while (a->GetRight() != nullptr)
+    {
+        p = a;
+        a = a->GetRight();
+    }
+    // copia en current el valor (data) del nodo apuntado por a
+    current->SetData(a->GetData());
+    if (p == a) // si a es el hijo izquierdo de current
+        p->SetLeft(a->GetLeft());
+    else
+        p->SetRight(a->GetRight());
+    return a;
+}
+
+AvlNode *AvlTree::Delete(AvlNode *subRoot, TipoElemento &data) {
+    if(isEmpty())
+        std::cout<<"No se ha encontrado el nodo con el dato provisto.";
+    else if (data < subRoot->GetData())
+    {
+        AvlNode* newLeft;
+        newLeft = Delete(subRoot->GetLeft(), data);
+        subRoot->SetLeft(newLeft);
+    }
+    else if (data > subRoot->GetData()){
+        AvlNode* newRight;
+        newRight = Delete(subRoot->GetRight(), data);
+        subRoot->SetRight(newRight);
+    } // proceso de búsqueda según el libro: si el dato es menor, va iterando recursivamente ya sea en el subárbol izq o derecho hasta encontrarlo
+    else // cuando encuentra el nodo:
+    {
+        AvlNode *nodeToDelete;
+        nodeToDelete = subRoot;
+        if (nodeToDelete->GetLeft() == nullptr)
+            subRoot = nodeToDelete->GetRight();
+        else if (nodeToDelete->GetRight() == nullptr)
+            subRoot = nodeToDelete->GetLeft();
+        else
+        {   // si tiene rama izq y derecha
+            Replace(nodeToDelete);
+        }
+    }
+    return subRoot;
+}
+
 AvlNode *AvlTree::Find(AvlNode *subRoot, TipoElemento &searched) {
     if (subRoot == nullptr)
         return nullptr;
@@ -231,6 +279,14 @@ void AvlTree::PostOrder() {
 
 AvlNode *AvlTree::Find(TipoElemento searched) {
     return Find(root, searched);
+}
+
+bool AvlTree::isEmpty() {
+    return root == nullptr;
+}
+
+void AvlTree::Delete(TipoElemento data) {
+    Delete(root, data);
 }
 
 

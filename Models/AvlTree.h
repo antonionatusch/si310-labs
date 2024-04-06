@@ -11,6 +11,9 @@ private:
     void InOrder(AvlNode *r);
     void PostOrder(AvlNode *r);
     AvlNode* Find(AvlNode* subRoot, TipoElemento &searched);
+    AvlNode* Replace(AvlNode* current);
+    AvlNode* Delete(AvlNode* subRoot, TipoElemento &data);
+
 public:
     AvlTree();
     void Insert(TipoElemento data);
@@ -19,5 +22,7 @@ public:
     void InOrder();
     void PostOrder();
     AvlNode* Find(TipoElemento searched);
+    void Delete(TipoElemento data);
+    bool isEmpty();
 };
 

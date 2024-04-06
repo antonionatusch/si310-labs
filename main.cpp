@@ -11,7 +11,10 @@ int main() {
    avl.MultiInsert(5);
     avl.InOrder();
     std::cout<<"El elemento 7 se encuentra ubicado en el nodo con la siguiente dirección de memoria:"<<avl.Find(7);
-
+    std::cout<<"Borrando el elemento 7: \n";
+    avl.Delete(7);
+    std::cout<<"Buscando de nuevo... \n";
+    std::cout<<avl.Find(7);
 
     return 0;
 }
