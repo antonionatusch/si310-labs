@@ -7,6 +7,7 @@
 #include "Models/BinaryTree.h"
 #include "Models/UndirectedWeightedGraph.cpp"
 #include "Models/UndirectedGraph.h"
+
 int main() {
     int op;
 
@@ -38,6 +39,12 @@ int main() {
                 break;
             case 4:
                 UndirectedWeightedGraph().menuOpciones();
+                break;
+            case 5:
+                int n;
+                std::cout<<"Digite la cantidad de vértices que tendrá el grafo: ";
+                std::cin>>n;
+                UndirectedGraph(n).MenuOpciones();
             case 0:
                 std::cout<<"Hasta luego.";
                 break;

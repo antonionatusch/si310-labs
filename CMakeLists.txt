@@ -29,4 +29,6 @@ add_executable(si310_labs
         Models/VanillaTreeNode.h
         Models/VanillaTreeNode.cpp
         Models/VanillaTreeNode.cpp
-        Models/BinaryTree.cpp)
+        Models/BinaryTree.cpp
+        Models/UndirectedGraph.cpp
+        Models/Vertex.cpp)

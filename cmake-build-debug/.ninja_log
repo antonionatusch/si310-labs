@@ -1,17 +1,15 @@
 # ninja log v5
 13	634	7322163693680828	CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj	14453a1ee1f4613a
-5	470	7341093954818726	CMakeFiles/si310_labs.dir/main.cpp.obj	3cadeb956cdb4613
-11	714	7341057727083357	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	536baf43fd8c79b4
-486	593	7341093955942897	si310_labs.exe	ba2984d63272049d
+4	533	7341147968131482	CMakeFiles/si310_labs.dir/main.cpp.obj	3cadeb956cdb4613
+15	517	7341121410492528	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	536baf43fd8c79b4
+720	861	7341121413889415	si310_labs.exe	ba2984d63272049d
 3	662	7322163694041027	CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj	bfd2fbd40076552b
-3	482	7341090026111073	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	fdce6fc41efe08e1
+3	551	7341121410835864	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	fdce6fc41efe08e1
 26	635	7322163693725177	CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj	7012a261a1d342e9
 60	711	7341057727073346	CMakeFiles/si310_labs.dir/Models/AvlNode.cpp.obj	32c211226d30143b
-12	486	7341093954972187	CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj	7b14978a4379baaa
+20	586	7341121411185869	CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj	7b14978a4379baaa
 32	714	7341057727083357	CMakeFiles/si310_labs.dir/Models/VanillaTreeNode.cpp.obj	e1df388609acc4e1
 45	716	7341057727093357	CMakeFiles/si310_labs.dir/Models/BinaryTree.cpp.obj	68c21a007bda9474
-15	517	7341121410492528	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	536baf43fd8c79b4
-3	551	7341121410835864	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	fdce6fc41efe08e1
-20	586	7341121411185869	CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj	7b14978a4379baaa
-9	720	7341121412536945	CMakeFiles/si310_labs.dir/main.cpp.obj	3cadeb956cdb4613
-720	861	7341121413889415	si310_labs.exe	ba2984d63272049d
+9	542	7341147968206944	CMakeFiles/si310_labs.dir/Models/UndirectedGraph.cpp.obj	a35b3fdd6b438bd2
+5	78	7341148137583459	CMakeFiles/si310_labs.dir/Models/Vertex.cpp.obj	2435222bfa607503
+78	204	7341148138795829	si310_labs.exe	8c3dfd92c9670edf
