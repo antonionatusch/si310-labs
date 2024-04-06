@@ -278,6 +278,72 @@ void UndirectedGraph::DFS(char startVertex) {
     delete[] visited;
 }
 
+void UndirectedGraph::Menu() {
+
+    std::cout << "\n\tREPRESENTACION DE GRAFOS NO DIRIGIDOS\n\n";
+    std::cout << " 1. INSERTAR UN NODO " << std::endl;
+    std::cout << " 2. INSERTAR UNA ARISTA " << std::endl;
+    std::cout << " 3. ELIMINAR UN NODO " << std::endl;
+    std::cout << " 4. ELIMINAR UNA ARISTA " << std::endl;
+    std::cout << " 5. MOSTRAR GRAFO " << std::endl;
+    std::cout << " 6. RECORRER GRAFO EN AMPLITUD " << std::endl;
+    std::cout << " 7. RECORRER GRAFO EN PROFUNDIDAD " << std::endl;
+    std::cout << " 0. SALIR " << std::endl;
+    std::cout << "\n INGRESE OPCION: ";
+}
+
+void UndirectedGraph::MenuOpciones() {
+    int op; // opcion del menu
+    system("color 0b");
+    do
+    {
+        Menu();
+        std::cin >> op;
+        switch (op)
+        {
+            case 1:
+                char vertex;
+                std::cout << "type the vertex to create: "; std::cin >> vertex;
+                CreateVertex(vertex);
+                break;
+            case 2:
+                char from; char to;
+                std::cout<<"type the first vertex: " ; std::cin >> from; std::cout<< std::endl;
+                std::cout<<"type the second vertex: " ; std::cin >> to; std::cout<< std::endl;
+                AddEdge(from, to);
+                break;
+            case 3:
+                char dVertex;
+                std::cout << "type the vertex to delete: "; std::cin >> dVertex;
+                DeleteVertex(dVertex);
+                break;
+            case 4:
+                char dfVertex; char dsVertex;
+                std::cout << "type the first vertex to delete: "; std::cin >> dfVertex;
+                std::cout << "type the second vertex to delete: "; std::cin >> dsVertex;
+                DeleteEdge(dfVertex,dsVertex);
+                break;
+            case 5: ShowList();
+                break;
+            case 6:
+                char bfsVertex;
+                std::cout << "type the vertex to initialize BFS: "; std::cin >> bfsVertex;
+                BFS(bfsVertex);
+                break;
+            case 7:
+                char dfsVertex;
+                std::cout << "type the vertex to initialize BFS: "; std::cin >> dfsVertex;
+                DFS(dfsVertex);
+                break;
+            default: std::cout << "OPCION NO VALIDA...!!!";
+                break;
+        }
+        std::cout << std::endl << std::endl;
+        system("pause"); system("cls");
+    } while (op != 0);
+    getchar();
+}
+
 void UndirectedGraph::ShowList() {
     std::cout << "Lista de adyacencia del grafo:" << std::endl;
 

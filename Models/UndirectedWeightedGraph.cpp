@@ -236,4 +236,77 @@ public:
             std::cout << "To vertex " << vertices[i].data << ": " << distance[i] << " Path: " << path[i] << std::endl;
         }
     }
+
+    void menu()
+    {
+        std::cout << "\n\tREPRESENTACION DE GRAFOS NO DIRIGIDOS PONDERADOS\n\n";
+        std::cout << " 1. INSERTAR UN NODO " << std::endl;
+        std::cout << " 2. INSERTAR UNA ARISTA " << std::endl;
+        std::cout << " 3. ELIMINAR UN NODO " << std::endl;
+        std::cout << " 4. ELIMINAR UNA ARISTA " << std::endl;
+        std::cout << " 5. MOSTRAR GRAFO " << std::endl;
+        std::cout << " 6. RECORRER GRAFO EN AMPLITUD " << std::endl;
+        std::cout << " 7. RECORRER GRAFO EN PROFUNDIDAD " << std::endl;
+        std::cout << " 8. ALGORITMO DE DIJKSTRA " << std::endl;
+        std::cout << " 0. SALIR " << std::endl;
+        std::cout << "\n INGRESE OPCION: ";
+    }
+
+    void menuOpciones(){
+        int op; // opcion del menu
+        system("color 0b");
+        do
+        {
+            menu();
+            std::cin >> op;
+            switch (op)
+            {
+                case 1:
+                    char vertex;
+                    std::cout << "type the vertex to create: "; std::cin >> vertex;
+                    createVertex(vertex);
+                    break;
+                case 2:
+                    char from; char to; int w;
+                    std::cout<<"type the first vertex: " ; std::cin >> from; std::cout<< std::endl;
+                    std::cout<<"type the second vertex: " ; std::cin >> to; std::cout<< std::endl;
+                    std::cout<<"type the edge's weight :" ; std:: cin >> w; std::cout<< std::endl;
+                    addEdge(from, to, w);
+                    break;
+                case 3:
+                    char dVertex;
+                    std::cout << "type the vertex to delete: "; std::cin >> dVertex;
+                    deleteVertex(dVertex);
+                    break;
+                case 4:
+                    char dfVertex; char dsVertex;
+                    std::cout << "type the first vertex to delete: "; std::cin >> dfVertex;
+                    std::cout << "type the second vertex to delete: "; std::cin >> dsVertex;
+                    deleteEdge(dfVertex,dsVertex);
+                    break;
+                case 5: showList();
+                    break;
+                case 6:
+                    char bfsVertex;
+                    std::cout << "type the vertex to initialize BFS: "; std::cin >> bfsVertex;
+                    bfs(bfsVertex);
+                    break;
+                case 7:
+                    char dfsVertex;
+                    std::cout << "type the vertex to initialize DFS: "; std::cin >> dfsVertex;
+                    dfs(dfsVertex);
+                    break;
+                case 8:
+                    char dijVertex;
+                    std::cout << "type the vertex to initialize Dijkstra: "; std::cin >> dijVertex;
+                    dijkstra(dijVertex);
+                    break;
+                default: std::cout << "OPCION NO VALIDA...!!!";
+                    break;
+            }
+            std::cout << std::endl << std::endl;
+            system("pause"); system("cls");
+        } while (op != 0);
+        getchar();
+    }
 };
