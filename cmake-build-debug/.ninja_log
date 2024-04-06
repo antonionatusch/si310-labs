@@ -1,14 +1,18 @@
 # ninja log v5
-3	472	7340834290109200	CMakeFiles/si310_labs.dir/main.cpp.obj	a6c31f3464ba5a1b
-29	601	7320794247446050	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	e4fba87d5c30fdab
-528	684	7340834292230420	si310_labs.exe	4179492e75dae787
-9	289	7335406261965124	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	13f2ae8e2f4d7fbe
+4	373	7340859816583533	CMakeFiles/si310_labs.dir/main.cpp.obj	a6c31f3464ba5a1b
+15	481	7340852983825105	CMakeFiles/si310_labs.dir/Models/TreeNode.cpp.obj	e4fba87d5c30fdab
+380	531	7340859818112353	si310_labs.exe	9868b418f3f7964a
+11	495	7340852983975911	CMakeFiles/si310_labs.dir/Models/BinarySearchTree.cpp.obj	13f2ae8e2f4d7fbe
 13	635	7320794247905523	CMakeFiles/si310_labs.dir/Models/Queues.cpp.obj	98773c0f3cf7ef6b
 6	536	7320794247446050	CMakeFiles/si310_labs.dir/Models/LinkedList.cpp.obj	52656dbaae22e211
 17	151	7335514179639459	CMakeFiles/si310_labs.dir/Models/vertex.cpp.obj	1565be5fd631606f
-9	84	7335634897901902	CMakeFiles/si310_labs.dir/Models/Vertex.cpp.obj	c52faea24f1f7ce4
+31	142	7340852980441120	CMakeFiles/si310_labs.dir/Models/Vertex.cpp.obj	c52faea24f1f7ce4
 22	636	7320794247915471	CMakeFiles/si310_labs.dir/Models/Stacks.cpp.obj	cb2f2069075ba6a9
-7	484	7340850574350901	build.ninja	d7ba632f27d4f5ef
+7	484	7340861590365041	build.ninja	d7ba632f27d4f5ef
+14	332	7340859816185619	CMakeFiles/si310_labs.dir/Models/AvlNode.cpp.obj	5d9244cb53fc1a9c
 6	119	7335520803535959	CMakeFiles/si310_labs.dir/Models/UndrirectedGraph.cpp.obj	2848a68638bef332
-9	528	7340834290731447	CMakeFiles/si310_labs.dir/Models/UndirectedGraph.cpp.obj	73e3c90fa38c13d1
-12	474	7340834290119197	CMakeFiles/si310_labs.dir/Models/UndirectedWeightedGraph.cpp.obj	c96c3d1ad12e27e6
+24	595	7340852984980753	CMakeFiles/si310_labs.dir/Models/UndirectedGraph.cpp.obj	73e3c90fa38c13d1
+19	534	7340852984373761	CMakeFiles/si310_labs.dir/Models/UndirectedWeightedGraph.cpp.obj	c96c3d1ad12e27e6
+20	341	7340859816276663	CMakeFiles/si310_labs.dir/Models/VanillaTreeNode.cpp.obj	e6a27e94e28c901d
+17	350	7340859816356715	CMakeFiles/si310_labs.dir/Models/AvlTree.cpp.obj	6841ea2eab8e96c4
+9	380	7340859816664867	CMakeFiles/si310_labs.dir/Models/BinaryTree.cpp.obj	785946271d11afbf
