@@ -15,6 +15,8 @@ int main() {
     avl.Delete(7);
     std::cout<<"Buscando de nuevo... \n";
     std::cout<<avl.Find(7);
+    std::cout<<"Altura del arbol: "<<avl.Height();
+    std::cout<<"Es un arbol lleno? "<<avl.isFull();
 
     return 0;
 }

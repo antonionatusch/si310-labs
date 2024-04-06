@@ -250,6 +250,33 @@ AvlNode *AvlTree::Find(AvlNode *subRoot, TipoElemento &searched) {
         return Find(subRoot->GetRight(), searched);
 }
 
+int AvlTree::Height(AvlNode *r) {
+    if (r == nullptr)
+        return 0;
+    else
+    {
+        int leftHeight = Height(r->GetLeft());
+        int rightHeight = Height(r->GetRight());
+        if (leftHeight > rightHeight)
+            return leftHeight + 1; // +1 por la raiz
+        else
+            return rightHeight + 1;
+    }
+}
+
+bool AvlTree::isFull(AvlNode *r) {
+    if (r == nullptr)
+        return true;
+    else
+    if (Height(r->GetLeft()) != Height(r->GetRight()))
+        return false;
+
+    return isFull(r->GetLeft()) && isFull(r->GetRight());
+
+}
+
+
+
 // Público
 void AvlTree::Insert(TipoElemento data) {
     bool heightChanged = false;
@@ -287,6 +314,14 @@ bool AvlTree::isEmpty() {
 
 void AvlTree::Delete(TipoElemento data) {
     Delete(root, data);
+}
+
+int AvlTree::isFull() {
+    return isFull(root);
+}
+
+int AvlTree::Height() {
+    return Height(root);
 }
 
 

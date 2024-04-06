@@ -13,6 +13,8 @@ private:
     AvlNode* Find(AvlNode* subRoot, TipoElemento &searched);
     AvlNode* Replace(AvlNode* current);
     AvlNode* Delete(AvlNode* subRoot, TipoElemento &data);
+    int Height(AvlNode *r);
+    bool isFull(AvlNode *r);
 
 public:
     AvlTree();
@@ -24,5 +26,7 @@ public:
     AvlNode* Find(TipoElemento searched);
     void Delete(TipoElemento data);
     bool isEmpty();
+    int Height();
+    int isFull();
 };
 
