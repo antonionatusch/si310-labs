@@ -5,6 +5,8 @@
 #include "Models/LinkedList.h"
 #include "Models/AvlTree.h"
 #include "Models/BinaryTree.h"
+#include "Models/UndirectedWeightedGraph.cpp"
+#include "Models/UndirectedGraph.h"
 int main() {
     int op;
 
@@ -14,6 +16,8 @@ int main() {
         std::cout<<"1.- Árbol AVL \n";
         std::cout<<"2.- Árbol Binario de Búsqueda \n";
         std::cout<<"3.- Árbol Binario \n";
+        std::cout<<"4.- Grafo no dirigido ponderado \n";
+        std::cout<<"5.- Grafo no dirigido  \n";
         std::cout<<"Digite alguna opción para ejecutarla o \"0\" para salir... ";
         std::cin>>op;
         while(std::cin.fail()){
@@ -32,6 +36,8 @@ int main() {
             case 3:
                 BinaryTree().ShortDemo();
                 break;
+            case 4:
+                UndirectedWeightedGraph().menuOpciones();
             case 0:
                 std::cout<<"Hasta luego.";
                 break;
