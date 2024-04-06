@@ -20,4 +20,17 @@ add_executable(si310_labs
         Models/TreeNode.h
         structures/Node.h
         Types/types.h
-        main.cpp)
+        main.cpp Models/Vertex.cpp
+        Models/Vertex.h
+        Models/UndirectedGraph.cpp
+        Models/UndirectedGraph.h
+        Models/UndirectedWeightedGraph.cpp
+        Models/UndirectedWeightedGraph.h
+        Models/AvlNode.cpp
+        Models/AvlNode.h
+        Models/AvlTree.cpp
+        Models/AvlTree.h
+        Models/BinaryTree.cpp
+        Models/BinaryTree.h
+        Models/VanillaTreeNode.cpp
+        Models/VanillaTreeNode.h)
