@@ -88,3 +88,6 @@ fabric.properties
 cmake-build-debug
 .idea
 CMakeLists.txt
+cmake-build-debug/.ninja_log
+cmake-build-debug/.ninja_deps
+cmake-build-debug/.cmake/*
