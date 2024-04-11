@@ -15,7 +15,7 @@ private:
         Vertex(char d) : data(d), numEdges(0) {}
         Vertex(): numEdges(0) {}
 
-        void addEdge(char dest, int weight) {
+        void addEdge(char dest, int weight) { // insertEdge
             if (numEdges < MAX_EDGES) {
                 edges[numEdges] = dest;
                 weights[numEdges] = weight;
@@ -67,7 +67,7 @@ public:
         return findVertexIndex(data) != -1;
     }
 
-    void addEdge(char from, char to, int weight) {
+    void addEdge(char from, char to, int weight) { // add Edge
         int fromIndex = findVertexIndex(from);
         int toIndex = findVertexIndex(to);
 

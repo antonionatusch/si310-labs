@@ -31,4 +31,8 @@ add_executable(si310_labs
         Models/VanillaTreeNode.cpp
         Models/BinaryTree.cpp
         Models/UndirectedGraph.cpp
-        Models/Vertex.cpp)
+        Models/Vertex.cpp
+        Models/DirectedGraphBase.h
+        Models/DirectedGraphBase.cpp
+        Models/DirectedGraph.cpp
+        Models/DirectedGraph.h)
