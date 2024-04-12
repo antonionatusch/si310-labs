@@ -56,8 +56,12 @@ int main() {
     DirectedGraph dg(7);
 
     dg.CreateVertices(7);
-    dg.AddEdges(7);
-    dg.BFS('D');
+    dg.AddEdges(8);
+    //dg.BFS('D');
+    // dg.DFS('D');
+    dg.ShowList();
+    dg.DeleteVertices(2);
+    dg.ShowList();
 
 
 

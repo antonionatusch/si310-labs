@@ -5,6 +5,7 @@
 #include "DirectedGraph.h"
 #include "iostream"
 #include "queue"
+#include "stack"
 // constructor
 
 DirectedGraph::DirectedGraph(int v) {
@@ -164,52 +165,7 @@ void DirectedGraph::DeleteVertex(char name) {
     ReorganizeAdjList();
 }
 
-void DirectedGraph::BFS(char startVertex) {
-    if (!VertexExists(startVertex)) {
-        std::cout << "El vertice " << startVertex << " no existe en el grafo." << std::endl;
-        return;
-    }
 
-    //start with all vertices as not visited
-    bool *visited = new bool[currentVertices];
-    for(int i = 0; i <currentVertices; i++ ){
-        visited[i] = false;
-    }
-
-    //Create a queue for BFS
-    std::queue<char> bfsQueue;
-
-    //Started Vertex marked as visited and added to queue
-    bfsQueue.push(adjMatrix[FindVertexIndex(startVertex)]->name);
-    visited[FindVertexIndex(startVertex)] = true;
-
-    //Continue until queue is empty
-    while (!bfsQueue.empty()){
-
-        char aux = bfsQueue.front();
-        bfsQueue.pop();
-
-        //Get all adjacent vertices from that vertex
-        Vertex* temp = adjMatrix[FindVertexIndex(aux)];
-        temp = temp->next;
-
-        std::cout << "Checking adjacent vertices from that vertex: " << aux << std::endl;
-        while (temp){
-            int adjIndex = FindVertexIndex(temp->name);
-            if(!visited[adjIndex]) {
-                //marked as visited
-                std::cout << "Visit and enqueue " << temp->name << std::endl;
-                visited[adjIndex] = true;
-                bfsQueue.push(temp->name);
-            }
-            temp = temp->next;
-        }
-    }
-
-    delete[] visited;
-}
-
-void DirectedGraph::DFS(char startVertex) {}
 
 void DirectedGraph::AddEdges(int n) {
     for(int i = 0; i < n; ++i)
@@ -221,3 +177,4 @@ void DirectedGraph::AddEdges(int n) {
         AddEdge(fromVertex, toVertex);
     }
 }
+

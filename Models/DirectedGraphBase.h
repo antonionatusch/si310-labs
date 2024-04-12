@@ -16,12 +16,13 @@ public:
     void CreateVertex(char name);
     int FindVertexIndex(char name) const;
     void CreateVertices(int n);
-
+    void DeleteVertices(int n);
     virtual void ShowList()= 0;
     virtual void DeleteEdge(char origin, char destiny) = 0;
     virtual void DeleteVertex(char name) = 0;
-    virtual void BFS(char startVertex) = 0;
-    virtual void DFS(char startVertex) = 0;
+    virtual void BFS(char startVertex);
+    virtual void DFS(char startVertex);
+
 
 
 

@@ -4,6 +4,8 @@
 
 #include "DirectedGraphBase.h"
 #include "iostream"
+#include "stack"
+#include "queue"
 void DirectedGraphBase::CreateVertex(char name) {
     if(!VertexExists(name)){
         if(currentVertices == -1){
@@ -61,4 +63,101 @@ void DirectedGraphBase::CreateVertices(int n) {
         CreateVertex(vertexName);
     }
 }
+
+void DirectedGraphBase::BFS(char startVertex) {
+
+    if (!VertexExists(startVertex)) {
+        std::cout << "El vertice " << startVertex << " no existe en el grafo." << std::endl;
+        return;
+    }
+
+    //start with all vertices as not visited
+    bool *visited = new bool[currentVertices];
+    for(int i = 0; i <currentVertices; i++ ){
+        visited[i] = false;
+    }
+
+    //Create a queue for BFS
+    std::queue<char> bfsQueue;
+
+    //Started Vertex marked as visited and added to queue
+    bfsQueue.push(adjMatrix[FindVertexIndex(startVertex)]->name);
+    visited[FindVertexIndex(startVertex)] = true;
+
+    //Continue until queue is empty
+    while (!bfsQueue.empty()){
+
+        char aux = bfsQueue.front();
+        bfsQueue.pop();
+
+        //Get all adjacent vertices from that vertex
+        Vertex* temp = adjMatrix[FindVertexIndex(aux)];
+        temp = temp->next;
+
+        std::cout << "Checking adjacent vertices from that vertex: " << aux << std::endl;
+        while (temp){
+            int adjIndex = FindVertexIndex(temp->name);
+            if(!visited[adjIndex]) {
+                //marked as visited
+                std::cout << "Visit and enqueue " << temp->name << std::endl;
+                visited[adjIndex] = true;
+                bfsQueue.push(temp->name);
+            }
+            temp = temp->next;
+        }
+    }
+
+    delete[] visited;
+}
+
+void DirectedGraphBase::DFS(char startVertex) {
+    if (!VertexExists(startVertex)) {
+        std::cout << "El vértice " << startVertex << " no existe en el grafo." << std::endl;
+        return;
+    }
+
+    bool *visited = new bool[currentVertices];
+    for (int i = 0; i < currentVertices; ++i) {
+        visited[i] = false;
+    }
+
+    std::stack<char> stack;
+
+    stack.push(startVertex);
+
+    while (!stack.empty()) {
+        char currentPos = stack.top();
+        stack.pop();
+
+        // Visitamos el nodo actual solo si no ha sido visitado previamente
+        if (!visited[FindVertexIndex(currentPos)]) {
+            std::cout << "Visiting vertex " << currentPos << std::endl;
+            visited[FindVertexIndex(currentPos)] = true;
+
+            // Obtenemos los nodos adyacentes del nodo actual y los agregamos a la pila si no han sido visitados
+            Vertex* temp = adjMatrix[FindVertexIndex(currentPos)]->next;
+            while (temp != nullptr) {
+                int nextPos = FindVertexIndex(temp->name);
+                if (!visited[nextPos]) {
+                    std::cout << "Going to vertex " << temp->name << " from vertex " << currentPos << std::endl;
+                    stack.push(temp->name);
+                }
+                temp = temp->next;
+            }
+        }
+    }
+
+    delete[] visited;
+}
+
+void DirectedGraphBase::DeleteVertices(int n) {
+    for (int i = 0; i < n; ++i)
+    {
+        char deletedVertexName;
+        std::cout<<"Vertex number "<<i+1<<" to be deleted: "; std::cin>>deletedVertexName;
+        DeleteVertex(deletedVertexName);
+    }
+}
+
+
 
