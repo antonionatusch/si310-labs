@@ -15,7 +15,6 @@ public:
     void AddEdge(int origin, int destiny) override;
     void RemoveEdge(char origin, char destiny) override;
     void DeleteEdge(char origin, char destiny) override;
-    void CreateVertex(char name) override;
     void DeleteVertex(char name) override;
 };
 

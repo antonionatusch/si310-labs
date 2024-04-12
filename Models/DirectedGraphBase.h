@@ -16,7 +16,7 @@ public:
     virtual void RemoveEdge(char origin, char destiny) = 0; // como va a diferir ligeramente el funcionamiento de un grafo con o sin peso, se hace esto
     void ReorganizeAdjList(); // ambos utilizan el mismo concepto de lista de adyancencia
     bool VertexExists(char name);
-    virtual void CreateVertex(char name) = 0;
+    void CreateVertex(char name);
     int FindVertexIndex(char name) const;
     virtual void AddEdge(int origin, int destiny) = 0;
     virtual void ShowList()= 0;

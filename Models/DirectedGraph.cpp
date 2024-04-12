@@ -94,22 +94,6 @@ void DirectedGraph::DeleteEdge(char origin, char destiny) {
     }
 }
 
-void DirectedGraph::CreateVertex(char name) {
-    if(!VertexExists(name)){
-        if(currentVertices == -1){
-            currentVertices = 0;
-        }
-        for (int i = 0; i < totalVertices; ++i) {
-            if (!adjMatrix[i]) {
-                adjMatrix[i] = new Vertex(name);
-                std::cout << "Vertice " << name << " creado" << std::endl;
-                currentVertices++;
-                return;
-            }
-        }
-    }
-    std::cout << "Can't create more vertices" << std::endl;
-}
 
 void DirectedGraph::ShowList() {
     std::cout << "Lista de adyacencia del grafo:" << std::endl;
