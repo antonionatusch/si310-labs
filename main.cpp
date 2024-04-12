@@ -53,12 +53,12 @@
 while (op != 0); */
 int main() {
     int op;
-    DirectedGraph dg(2);
+    DirectedGraph dg(7);
 
-    dg.CreateVertex('1');
-    dg.CreateVertex('5');
-    dg.AddEdge('1', '5');
-    dg.ShowList();
+    dg.CreateVertices(7);
+    dg.AddEdges(7);
+    dg.BFS('D');
+
 
 
 

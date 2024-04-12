@@ -21,14 +21,14 @@ void DirectedGraphBase::CreateVertex(char name) {
     std::cout << "Can't create more vertices" << std::endl;
 }
 
-bool DirectedGraphBase::VertexExists(char name) {
+bool DirectedGraphBase::VertexExists(char name) const {
     for (int i = 0; i < totalVertices; ++i) {
         if (adjMatrix[i] && adjMatrix[i]->name == name) return true;
     }
     return false;
 }
 
-void DirectedGraphBase::ReorganizeAdjList() {
+void DirectedGraphBase::ReorganizeAdjList() const {
     int newPosition = 0;
     // Itera sobre todos los vértices restantes
     for (int i = 0; i < totalVertices; ++i) {
@@ -51,5 +51,14 @@ int DirectedGraphBase::FindVertexIndex(char name) const {
         if (adjMatrix[i] && adjMatrix[i]->name == name) return i;
     }
     return -1;
+}
+
+void DirectedGraphBase::CreateVertices(int n) {
+    for (int i = 0; i < n; ++i)
+    {
+        char vertexName;
+        std::cout<<"Vertex "<<i+1<<": "; std::cin>>vertexName;
+        CreateVertex(vertexName);
+    }
 }
 
