@@ -62,6 +62,8 @@ int main() {
     dg.ShowList();
     dg.DeleteVertices(2);
     dg.ShowList();
+    dg.DeleteEdges(2);
+    dg.ShowList();
 
 
 

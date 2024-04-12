@@ -18,7 +18,6 @@ DirectedGraph::DirectedGraph(int v) {
     }
 }
 // dest
-
 DirectedGraph::~DirectedGraph() {
     for (int i = 0; i < totalVertices; ++i) {
         Vertex* actual = adjMatrix[i];
@@ -30,7 +29,6 @@ DirectedGraph::~DirectedGraph() {
     }
     delete[] adjMatrix;
 }
-
 
 void DirectedGraph::InsertEdge(int origin, int destiny) {
     auto* p = new Vertex;
@@ -95,7 +93,6 @@ void DirectedGraph::DeleteEdge(char origin, char destiny) {
         }
     }
 }
-
 
 void DirectedGraph::ShowList() {
     std::cout << "Lista de adyacencia del grafo:" << std::endl;
@@ -165,8 +162,6 @@ void DirectedGraph::DeleteVertex(char name) {
     ReorganizeAdjList();
 }
 
-
-
 void DirectedGraph::AddEdges(int n) {
     for(int i = 0; i < n; ++i)
     {
@@ -175,6 +170,17 @@ void DirectedGraph::AddEdges(int n) {
         std::cout<<"From: "; std::cin>>fromVertex;
         std::cout<<"To: "; std::cin>>toVertex;
         AddEdge(fromVertex, toVertex);
+    }
+}
+
+void DirectedGraph::DeleteEdges(int n) {
+    for (int i = 0; i < n; ++i)
+    {
+        char deletedFromVertex, deletedToVertex;
+        std::cout<<"Edge to be deleted number: "<<i+1<<" \n";
+        std::cout<<"From: "; std::cin>>deletedFromVertex;
+        std::cout<<"To: "; std::cin>>deletedToVertex;
+        DeleteEdge(deletedFromVertex, deletedToVertex);
     }
 }
 
