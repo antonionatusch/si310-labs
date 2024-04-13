@@ -5,6 +5,7 @@
 class Vertex {
 public:
     char name;
+    int weight;
     Vertex *next;
 
     explicit Vertex(char name); Vertex();

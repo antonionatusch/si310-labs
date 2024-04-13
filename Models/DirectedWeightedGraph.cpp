@@ -30,6 +30,7 @@ DirectedWeightedGraph::~DirectedWeightedGraph() {
 void DirectedWeightedGraph::InsertEdge(int originVertex, int destinyVertex, int weight) {
     Vertex* newNode = new Vertex;
     newNode->name = adjMatrix[destinyVertex]->name;
+    newNode->weight = weight; // Establece el peso de la arista
     newNode->next = nullptr;
 
     // Encuentra el último nodo en la lista de adyacencia del vértice de origen y agrega el nuevo nodo
@@ -38,9 +39,6 @@ void DirectedWeightedGraph::InsertEdge(int originVertex, int destinyVertex, int 
         temp = temp->next;
     }
     temp->next = newNode;
-
-    // Actualiza el peso correspondiente en el arreglo de pesos
-    weights[originVertex] = weight;
 
 
 }
@@ -57,6 +55,23 @@ void DirectedWeightedGraph::AddEdge(char fromVertex, char toVertex, int weight) 
     }
 }
 
+void DirectedWeightedGraph::AddEdges(int n) {
+    for (int i = 0; i < n; ++i)
+    {
+        char fromVertex, toVertex;
+        int weight;
+
+        std::cout << "Adding edge number: " << i + 1 << "\n";
+        std::cout << "From vertex: ";
+        std::cin >> fromVertex;
+        std::cout << "To: ";
+        std::cin >> toVertex;
+        std::cout << "With a weight of: ";
+        std::cin >> weight;
+        AddEdge(fromVertex, toVertex, weight); // Aquí intercambiar fromVertex y toVertex
+    }
+}
+
 void DirectedWeightedGraph::ShowList() {
     std::cout << "Lista de adyacencia del grafo:" << std::endl;
 
@@ -65,9 +80,12 @@ void DirectedWeightedGraph::ShowList() {
     } else {
         for (int i = 0; i < currentVertices; i++) {
             std::cout << "Vertice " << adjMatrix[i]->name << ": ";
-            Vertex* currentVertex = adjMatrix[i]->next; // Se omite el primer vértice que es el mismo
+            Vertex* currentVertex = adjMatrix[i]->next;
             while (currentVertex != nullptr) {
-                std::cout << currentVertex->name << " (Peso: " << weights[i] << ")";
+                std::cout << currentVertex->name;
+                if (currentVertex->weight != 0) {
+                    std::cout << " (Peso: " << currentVertex->weight << ")";
+                }
                 if (currentVertex->next != nullptr) {
                     std::cout << "-> ";
                 }
