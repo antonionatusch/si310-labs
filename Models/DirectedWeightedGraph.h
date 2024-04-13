@@ -17,6 +17,8 @@ public:
     void InsertEdge(int originVertex, int destinyVertex, int weight);
     void AddEdges(int n);
     void Dijkstra(char startingPoint);
+    void DeleteEdges(int n);
+    void Menu();
 
 };
 

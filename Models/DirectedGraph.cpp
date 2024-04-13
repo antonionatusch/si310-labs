@@ -186,3 +186,62 @@ void DirectedGraph::DeleteEdges(int n) {
     }
 }
 
+void DirectedGraph::Menu() {
+    char op;
+    int verticesTotales;
+    std::cout << "Digite la cantidad de vértices totales con las que va a trabajar: ";
+    std::cin >> verticesTotales;
+    DirectedGraph dg(verticesTotales);
+
+    do {
+        std::cout << "\n********** MENU **********\n";
+        std::cout << "1. Insertar vértices\n";
+        std::cout << "2. Insertar aristas\n";
+        std::cout << "3. Mostrar lista de adyacencia\n";
+        std::cout << "4. Eliminar aristas\n";
+        std::cout << "5. Eliminar vértices\n";
+        std::cout << "6. Salir\n";
+        std::cout << "Ingrese su opción: ";
+        std::cin >> op;
+
+        switch (op) {
+            case '1': {
+                int numVertices;
+                std::cout << "Digite la cantidad de vértices a insertar: ";
+                std::cin >> numVertices;
+                dg.CreateVertices(numVertices);
+                break;
+            }
+            case '2': {
+                int numAristas;
+                std::cout << "Digite la cantidad de aristas a insertar: ";
+                std::cin >> numAristas;
+                dg.AddEdges(numAristas);
+                break;
+            }
+            case '3':
+                dg.ShowList();
+                break;
+            case '4': {
+                int numAristasEliminar;
+                std::cout << "Digite la cantidad de aristas a eliminar: ";
+                std::cin >> numAristasEliminar;
+                dg.DeleteEdges(numAristasEliminar);
+                break;
+            }
+            case '5': {
+                char vertexToDelete;
+                std::cout << "Digite el vértice a eliminar: ";
+                std::cin >> vertexToDelete;
+                dg.DeleteVertex(vertexToDelete);
+                break;
+            }
+            case '6':
+                std::cout << "Saliendo del programa...\n";
+                break;
+            default:
+                std::cout << "Opción inválida. Intente de nuevo.\n";
+        }
+    } while (op != '6');
+}
+
