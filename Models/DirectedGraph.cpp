@@ -40,6 +40,8 @@ void DirectedGraph::InsertEdge(int origin, int destiny) {
         temp = temp->next;
     }
     temp->next = p;
+
+
 }
 
 void DirectedGraph::AddEdge(char origin, char destiny) {

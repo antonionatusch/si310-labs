@@ -35,4 +35,6 @@ add_executable(si310_labs
         Models/DirectedGraphBase.h
         Models/DirectedGraphBase.cpp
         Models/DirectedGraph.cpp
-        Models/DirectedGraph.h)
+        Models/DirectedGraph.h
+        Models/DirectedWeightedGraph.cpp
+        Models/DirectedWeightedGraph.h)

@@ -8,6 +8,7 @@
 #include "Models/UndirectedWeightedGraph.cpp"
 #include "Models/UndirectedGraph.h"
 #include "Models/DirectedGraph.h"
+#include "Models/DirectedWeightedGraph.h"
 /*do
 {
     std::cout<<"\n MENU PRINCIPAL \n";
@@ -53,17 +54,12 @@
 while (op != 0); */
 int main() {
     int op;
-    DirectedGraph dg(7);
-
-    dg.CreateVertices(7);
-    dg.AddEdges(8);
-    //dg.BFS('D');
-    // dg.DFS('D');
-    dg.ShowList();
-    dg.DeleteVertices(2);
-    dg.ShowList();
-    dg.DeleteEdges(2);
-    dg.ShowList();
+    DirectedWeightedGraph dwg(10);
+    dwg.CreateVertices(2);
+    dwg.AddEdge('A', 'B', 10);
+    dwg.ShowList();
+    dwg.AddEdge('B', 'A', 20);
+    dwg.ShowList();
 
 
 

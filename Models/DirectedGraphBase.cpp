@@ -64,7 +64,7 @@ void DirectedGraphBase::CreateVertices(int n) {
     }
 }
 
-void DirectedGraphBase::BFS(char startVertex) {
+void DirectedGraphBase::BFS(char startVertex) const {
 
     if (!VertexExists(startVertex)) {
         std::cout << "El vertice " << startVertex << " no existe en el grafo." << std::endl;
@@ -110,7 +110,7 @@ void DirectedGraphBase::BFS(char startVertex) {
     delete[] visited;
 }
 
-void DirectedGraphBase::DFS(char startVertex) {
+void DirectedGraphBase::DFS(char startVertex) const {
     if (!VertexExists(startVertex)) {
         std::cout << "El vértice " << startVertex << " no existe en el grafo." << std::endl;
         return;

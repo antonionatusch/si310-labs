@@ -20,8 +20,8 @@ public:
     virtual void ShowList()= 0;
     virtual void DeleteEdge(char origin, char destiny) = 0;
     virtual void DeleteVertex(char name) = 0;
-    virtual void BFS(char startVertex);
-    virtual void DFS(char startVertex);
+    void BFS(char startVertex) const;
+    void DFS(char startVertex) const;
 
 
 
