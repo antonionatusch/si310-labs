@@ -54,13 +54,7 @@
 while (op != 0); */
 int main() {
 
-    DirectedWeightedGraph dwg(10);
-    dwg.CreateVertices(4);
-    dwg.AddEdge('A', 'B', 2);
-    dwg.AddEdge('B', 'D', 5);
-    dwg.AddEdge('A', 'C', 3);
-    dwg.ShowList();
-    dwg.BFS('A');
+
 
 
 
