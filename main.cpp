@@ -64,21 +64,27 @@
     while (op != 0); */
 int main() {
     DFA automaton;
+    // ejemplo en clases
+    automaton.AddState("1", true);
+    automaton.AddState("2");
+    automaton.AddState("3", true);
+    automaton.AddState("4");
+    automaton.AddState("5");
 
-    automaton.AddState("q0", true);
-    automaton.AddState("q1");
-    automaton.AddState("q2", true);
+    automaton.AddTransition("1", 'a', "2");
+    automaton.AddTransition("1", 'b', "3");
+    automaton.AddTransition("2", 'a', "4");
+    automaton.AddTransition("2", 'b', "3");
+    automaton.AddTransition("3", 'a', "2");
+    automaton.AddTransition("3", 'b', "3");
+    automaton.AddTransition("4", 'a', "5");
+    automaton.AddTransition("4", 'b', "3");
+    automaton.AddTransition("5", 'a', "5");
+    automaton.AddTransition("5", 'b', "5");
 
-    // Definir transiciones
-    automaton.AddTransition("q0", '0', "q1");
-    automaton.AddTransition("q1", '1', "q2");
-    automaton.AddTransition("q2", '0', "q0");
-
-    // Definir estado inicial
-    automaton.DefineInitialState("q0");
-
+    automaton.DefineInitialState("1");
     // Definir alfabeto
-    std::unordered_set<char> alfabeto = {'0', '1'};
+    std::unordered_set<char> alfabeto = {'a', 'b'};
     automaton.DefineAlphabet(alfabeto);
 
     // Escribir configuración en archivo
@@ -88,11 +94,7 @@ int main() {
     std::string cadena;
     std::cout << "Ingrese una cadena para verificar si es aceptada por el AFD: ";
     std::cin >> cadena;
-    if (automaton.ProcessChain(cadena)) {
-        std::cout << "La cadena es aceptada por el AFD.\n";
-    } else {
-        std::cout << "La cadena no es aceptada por el AFD.\n";
-    }
+    automaton.ValidateInput(cadena);
 
     
 

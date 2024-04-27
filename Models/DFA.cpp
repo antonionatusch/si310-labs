@@ -46,14 +46,15 @@ std::string DFA::goTo(std::string currentState, char symbol) const {
 }
 
 void DFA::WriteConfig(const std::string &fileName) const {
-    std::ofstream file(fileName);
+    auto defaultPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\";
+    std::ofstream file(defaultPath + fileName);
 
     if (!file.is_open())
     {
         std::cerr<<"Hubo un error al abrir el file para escribir la config del AFD. \n";
         return;
     }
-    file << "states:\n";
+    file << "Estados:\n";
     for (const auto& state : states)
     {
         file << state << (finalStates.count(state) ? " (final)" : "") << '\n';
@@ -120,5 +121,13 @@ void DFA::ReadConfig(const std::string &fileName) {
         }
     }
     file.close();
+}
+
+void DFA::ValidateInput(const std::string& wordToValidate) {
+    if (ProcessChain(wordToValidate)) {
+        std::cout << "La cadena es aceptada por el AFD.\n";
+    } else {
+        std::cout << "La cadena no es aceptada por el AFD.\n";
     }
+}
 

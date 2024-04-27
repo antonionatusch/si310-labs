@@ -1,0 +1,19 @@
+Estados:
+4
+2
+5
+3 (final)
+1 (final)
+Transiciones:
+3 -> 'b' ->3
+2 -> 'b' ->3
+2 -> 'a' ->4
+5 -> 'b' ->5
+4 -> 'a' ->5
+1 -> 'b' ->3
+5 -> 'a' ->5
+4 -> 'b' ->3
+3 -> 'a' ->2
+1 -> 'a' ->2
+Estado actual: 1
+Alfabeto: b a 

@@ -39,6 +39,7 @@ public:
     // Métodos para leer/escribir configuración en archivo
     void WriteConfig(const std::string& fileName) const;
     void ReadConfig(const std::string& fileName);
+    void ValidateInput(const std::string& wordToValidate);
 
 private:
     std::unordered_set<std::string> states;
