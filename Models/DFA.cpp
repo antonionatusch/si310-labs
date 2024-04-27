@@ -46,7 +46,7 @@ std::string DFA::goTo(std::string currentState, char symbol) const {
 }
 
 void DFA::WriteConfig(const std::string &fileName) const {
-    auto defaultPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\";
+    auto defaultPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\"; // cambiar el path a su espacio de preferencia
     std::ofstream file(defaultPath + fileName);
 
     if (!file.is_open())
