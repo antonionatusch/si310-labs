@@ -83,14 +83,14 @@ int main() {
     automaton.AddTransition("5", 'b', "5");
 
     automaton.DefineInitialState("1");
-    // Definir alfabeto
+
     std::unordered_set<char> alfabeto = {'a', 'b'};
     automaton.DefineAlphabet(alfabeto);
 
-    // Escribir configuración en archivo
+
     automaton.WriteConfig("configuracion.txt");
 
-    // Procesar cadenas
+
     std::string cadena;
     std::cout << "Ingrese una cadena para verificar si es aceptada por el AFD: ";
     std::cin >> cadena;
