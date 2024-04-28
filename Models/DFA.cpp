@@ -164,3 +164,14 @@ void DFA::AddTransitions(int n) {
     }
 }
 
+void DFA::WriteSymbols(int n) {
+    std::vector<char> userAlphabet;
+    for (int i = 0; i < n; ++i)
+    {
+        char tmp;
+        std::cout<<"Símbolo "<<i+1<<": "; std::cin>>tmp;
+        userAlphabet.push_back(tmp);
+    }
+    DefineAlphabet(userAlphabet);
+}
+
