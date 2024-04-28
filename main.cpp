@@ -64,8 +64,9 @@
     while (op != 0); */
 int main() {
     DFA automaton;
+    std::string myPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\";
     // ejemplo en clases
-    /* automaton.AddState("1");
+   /* automaton.AddState("1");
     automaton.AddState("2");
     automaton.AddState("3", true);
     automaton.AddState("4");
@@ -84,18 +85,18 @@ int main() {
 
     automaton.DefineInitialState("1");
 
-    std::unordered_set<char> alfabeto = {'a', 'b'};
-    automaton.DefineAlphabet(alfabeto);
+    std::vector<char> alphabet = {'a', 'b'};
+    automaton.DefineAlphabet(alphabet); */
 
 
-    automaton.WriteConfig("configuracion.txt");*/
-    automaton.ReadConfig("configuracion.txt");
+    //automaton.WriteConfig(myPath + "configuracion.txt");
+    automaton.ReadConfig(myPath + "altconfig.txt");
 
 
     std::string cadena;
     std::cout << "Ingrese una cadena para verificar si es aceptada por el AFD: ";
     std::cin >> cadena;
-    automaton.ValidateInput(cadena);
+    automaton.CheckInput(cadena);
 
     
 

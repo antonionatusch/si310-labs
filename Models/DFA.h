@@ -21,13 +21,14 @@ private:
 public:
     explicit DFA();
     ~DFA();
-    void AddState(const std::string& state, bool isFinal);
+    void AddState(const std::string& state, bool isFinal = false);
     void AddTransition(const std::string& originState, char symbol, const std::string destinyState);
     void DefineInitialState(const std::string& initialState);
     void DefineAlphabet(const std::vector<char>& alphabet);
     bool IsAValidChain(const std::string& chain);
     void ReadConfig(const std::string& fileName);
     void WriteConfig(const std::string& fileName);
+    void CheckInput(const std::string& userInput);
 };
 
 
