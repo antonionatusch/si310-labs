@@ -1,0 +1,24 @@
+Estados
+1
+2
+4
+5
+3
+Alfabeto
+a
+b
+Transiciones
+1 a 2
+1 b 3
+2 a 4
+2 b 3
+3 a 2
+3 b 3
+4 a 5
+4 b 3
+5 a 5
+5 b 5
+EstadoInicial
+1
+EstadosAceptacion
+3

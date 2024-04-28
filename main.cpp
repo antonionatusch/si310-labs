@@ -66,6 +66,9 @@ int main() {
     DFA automaton;
     std::string myPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\";
 
+    automaton.AddStates(5);
+    automaton.AddTransitions(10);
+    automaton.WriteSymbols(2);
 
     // ejemplo en clases
    /* automaton.AddState("1");
@@ -91,8 +94,8 @@ int main() {
     automaton.DefineAlphabet(alphabet); */
 
 
-    //automaton.WriteConfig(myPath + "configuracion.txt");
-    automaton.ReadConfig(myPath + "altconfig.txt");
+    automaton.WriteConfig(myPath + "multInsertConf.txt");
+    //automaton.ReadConfig(myPath + "altconfig.txt");
 
 
     std::string cadena;

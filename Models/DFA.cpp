@@ -132,6 +132,7 @@ void DFA::CheckInput(const std::string &userInput) {
 }
 
 void DFA::AddStates(int n) {
+    std::string userInitialState;
     for (int i = 0; i < n; ++i)
     {
         std::string newState;
@@ -146,6 +147,9 @@ void DFA::AddStates(int n) {
             AddState(newState);
 
     }
+    std::cout<<"Digite cuál será su estado inicial: "; std::cin>>userInitialState;
+    DefineInitialState(userInitialState);
+
 }
 
 void DFA::AddTransitions(int n) {
