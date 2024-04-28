@@ -65,7 +65,7 @@
 int main() {
     DFA automaton;
     // ejemplo en clases
-    automaton.AddState("1");
+    /* automaton.AddState("1");
     automaton.AddState("2");
     automaton.AddState("3", true);
     automaton.AddState("4");
@@ -88,7 +88,8 @@ int main() {
     automaton.DefineAlphabet(alfabeto);
 
 
-    automaton.WriteConfig("configuracion.txt");
+    automaton.WriteConfig("configuracion.txt");*/
+    automaton.ReadConfig("configuracion.txt");
 
 
     std::string cadena;
