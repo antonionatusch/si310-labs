@@ -148,3 +148,19 @@ void DFA::AddStates(int n) {
     }
 }
 
+void DFA::AddTransitions(int n) {
+    for (int i = 0; i < n; ++i)
+    {
+        std::string originState, destinyState;
+        char symbol;
+        std::cout<<"Transición: "<<i+1<<std::endl;
+
+        std::cout<<"Digite el estado de origen: "; std::cin>>originState;
+        std::cout<<"Digite el símbolo: "; std::cin>>symbol;
+        std::cout<<"Digite el estado de destino: "; std::cin>>destinyState;
+
+        AddTransition(originState, symbol, destinyState);
+
+    }
+}
+
