@@ -65,7 +65,7 @@
 int main() {
     DFA automaton;
     // ejemplo en clases
-    automaton.AddState("1", true);
+    automaton.AddState("1");
     automaton.AddState("2");
     automaton.AddState("3", true);
     automaton.AddState("4");

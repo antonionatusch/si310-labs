@@ -1,0 +1,14 @@
+Estados:
+1
+2
+3 (final)
+
+Transiciones:
+q0 0 q1
+q0 1 q2
+q1
+q1
+q2
+q2
+Estado actual: 1
+Alfabeto: 0 1

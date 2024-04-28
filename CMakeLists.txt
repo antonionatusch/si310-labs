@@ -38,6 +38,6 @@ add_executable(si310_labs
         Models/DirectedGraph.h
         Models/DirectedWeightedGraph.cpp
         Models/DirectedWeightedGraph.h
-        Models/DFA.cpp
-        Models/DFA.h
-        Models/DFA.h)
+
+
+        Models/DFA.cpp)

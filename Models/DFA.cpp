@@ -63,7 +63,7 @@ void DFA::WriteConfig(const std::string &fileName) const {
     file << "Transiciones:\n";
     for (const auto& transition : transitions)
     {
-        file << transition.first.first << " -> '" << transition.first.second << "' ->" << transition.second << '\n';
+        file << transition.first.first << " -> '" << transition.first.second << "' -> " << transition.second << '\n';
     }
     file << "Estado actual: " << initialState << '\n';
     file << "Alfabeto: ";
@@ -75,53 +75,6 @@ void DFA::WriteConfig(const std::string &fileName) const {
     file.close();
 }
 
-void DFA::ReadConfig(const std::string &fileName) {
-    std::ifstream file(fileName);
-
-    if (!file.is_open())
-    {
-        std::cerr<< "Error al abrir el archivo para leer la config del AFD.\n";
-        return;
-    }
-    states.clear();
-    finalStates.clear();
-    transitions.clear();
-    std::string line;
-
-    while (std::getline(file, line))
-    {
-        if (line == "Estados:") {
-            while (std::getline(file, line) && line != "Transiciones:") {
-                size_t pos = line.find(" (final)");
-                if (pos != std::string::npos) {
-                    states.insert(line.substr(0, pos));
-                    finalStates.insert(line.substr(0, pos));
-                } else {
-                    states.insert(line);
-                }
-            }
-        } else if (line == "Transiciones:") {
-            while (std::getline(file, line) && line != "Estado inicial:") {
-                std::istringstream ss(line);
-                std::string estadoOrigen, estadoDestino;
-                char simbolo;
-                ss >> estadoOrigen >> simbolo >> estadoDestino;
-                transitions[{estadoOrigen, simbolo}] = estadoDestino;
-            }
-        } else if (line == "Estado inicial:") {
-            std::getline(file, line);
-            initialState = line;
-        } else if (line == "Alfabeto:") {
-            std::getline(file, line);
-            for (char c : line) {
-                if (c != ' ') {
-                    alphabet.insert(c);
-                }
-            }
-        }
-    }
-    file.close();
-}
 
 void DFA::ValidateInput(const std::string& wordToValidate) {
     if (ProcessChain(wordToValidate)) {
