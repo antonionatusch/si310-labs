@@ -131,3 +131,20 @@ void DFA::CheckInput(const std::string &userInput) {
         std::cout<<"Palabra rechazada. \n";
 }
 
+void DFA::AddStates(int n) {
+    for (int i = 0; i < n; ++i)
+    {
+        std::string newState;
+        char tmp;
+        std::cout<<"Estado "<<i+1<<": "; std::cin>>newState;
+        std::cout<<"Es final/de aceptación? Digite 's' para sí, 'n' para no.";
+        std::cin>>tmp;
+
+        if(tolower(tmp) == 's')
+            AddState(newState, true);
+        else if (tolower(tmp) == 'n')
+            AddState(newState);
+
+    }
+}
+

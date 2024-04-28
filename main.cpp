@@ -65,6 +65,8 @@
 int main() {
     DFA automaton;
     std::string myPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\";
+
+
     // ejemplo en clases
    /* automaton.AddState("1");
     automaton.AddState("2");

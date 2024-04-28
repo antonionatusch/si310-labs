@@ -29,6 +29,10 @@ public:
     void ReadConfig(const std::string& fileName);
     void WriteConfig(const std::string& fileName);
     void CheckInput(const std::string& userInput);
+
+    void AddStates(int n);
+    void AddTransitions(int n);
+    void WriteSymbols(int n);
 };
 
 
