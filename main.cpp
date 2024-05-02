@@ -63,14 +63,7 @@
     }
     while (op != 0); */
 int main() {
-    DFA automaton;
-    std::string myPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\";
-
-
-    std::string cadena;
-    std::cout << "Ingrese una cadena para verificar si es aceptada por el AFD: ";
-    std::cin >> cadena;
-    automaton.CheckInput(cadena);
+    DFA().Menu();
 
     
 

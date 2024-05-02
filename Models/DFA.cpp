@@ -194,31 +194,38 @@ void DFA::Menu() {
         {
             case '1':
                 int userStates, userTransitions, userSymbols;
-                std::string userInitialState, userConfigName;
+                std::string userInitialState, configName;
                 std::cout<<"Introduzca la cantidad de estados: "; std::cin>>userStates;
-                AddStates(userStates);
+                automaton.AddStates(userStates);
                 std::cout<<"\n Introduzca la cantidad de símbolos"; std::cin>>userSymbols;
-                WriteSymbols(userSymbols);
+                automaton.WriteSymbols(userSymbols);
                 std::cout<<"\n Introduzca la cantidad de transiciones: "; std::cin>>userTransitions;
-                AddTransitions(userTransitions);
+                automaton.AddTransitions(userTransitions);
 
-                std::cout<<"\n Desea escribir la configuración en un txt? Si es así, escriba el nombre del archivo o presione enter para continuar. "; std::cin>>userConfigName;
-                if(userConfigName.empty())
+                std::cout<<"\n Desea escribir la configuración en un txt? Si es así, escriba el nombre del archivo o presione 'n' para continuar. \n"; std::cin>>configName;
+
+                if(configName == "n")
                     break;
                 else
                 {
+                    std::cin.clear();
+                    std::cin.ignore(256, '\n');
                     std::string userPath;
-                    std::cout<<"Ocupa un path personalizado? Si es así, escríbalo o presione enter para terminar la escritura. "; std::cin>>userPath;
-                    if(!userPath.empty())
-                        WriteConfig("userConfigName");
+                    std::cout<<"Ocupa un path personalizado? Si es así, escríbalo o escriba 'n' para terminar la escritura. ";  std::cin>>userPath;
+
+                    if (userPath == "n")
+                    {
+                        automaton.WriteConfig(configName);
+                        break;
+                    }
+                    else
+                    {
+                        automaton.WriteConfig(userPath + configName);
+                        break;
+                    }
+
                 }
-
-                break;
-
-
-
         }
-
     }
     while(op != 's');
 }
