@@ -66,37 +66,6 @@ int main() {
     DFA automaton;
     std::string myPath = "C:\\Users\\antho\\CLionProjects\\si310-labs\\Models\\";
 
-    automaton.AddStates(5);
-    automaton.AddTransitions(10);
-    automaton.WriteSymbols(2);
-
-    // ejemplo en clases
-   /* automaton.AddState("1");
-    automaton.AddState("2");
-    automaton.AddState("3", true);
-    automaton.AddState("4");
-    automaton.AddState("5");
-
-    automaton.AddTransition("1", 'a', "2");
-    automaton.AddTransition("1", 'b', "3");
-    automaton.AddTransition("2", 'a', "4");
-    automaton.AddTransition("2", 'b', "3");
-    automaton.AddTransition("3", 'a', "2");
-    automaton.AddTransition("3", 'b', "3");
-    automaton.AddTransition("4", 'a', "5");
-    automaton.AddTransition("4", 'b', "3");
-    automaton.AddTransition("5", 'a', "5");
-    automaton.AddTransition("5", 'b', "5");
-
-    automaton.DefineInitialState("1");
-
-    std::vector<char> alphabet = {'a', 'b'};
-    automaton.DefineAlphabet(alphabet); */
-
-
-    automaton.WriteConfig(myPath + "multInsertConf.txt");
-    //automaton.ReadConfig(myPath + "altconfig.txt");
-
 
     std::string cadena;
     std::cout << "Ingrese una cadena para verificar si es aceptada por el AFD: ";

@@ -179,3 +179,46 @@ void DFA::WriteSymbols(int n) {
     DefineAlphabet(userAlphabet);
 }
 
+void DFA::Menu() {
+    char op;
+    DFA automaton;
+    do
+    {
+        std::cout<<"MENU DE AFD \n";
+        std::cout<<"1.- Escribir la configuración del autómata por teclado \n";
+        std::cout<<"2.- Leer la configuración de un archivo \n";
+        std::cout<<"3.- Validar cadena \n";
+        std::cin>>op;
+
+        switch (op)
+        {
+            case '1':
+                int userStates, userTransitions, userSymbols;
+                std::string userInitialState, userConfigName;
+                std::cout<<"Introduzca la cantidad de estados: "; std::cin>>userStates;
+                AddStates(userStates);
+                std::cout<<"\n Introduzca la cantidad de símbolos"; std::cin>>userSymbols;
+                WriteSymbols(userSymbols);
+                std::cout<<"\n Introduzca la cantidad de transiciones: "; std::cin>>userTransitions;
+                AddTransitions(userTransitions);
+
+                std::cout<<"\n Desea escribir la configuración en un txt? Si es así, escriba el nombre del archivo o presione enter para continuar. "; std::cin>>userConfigName;
+                if(userConfigName.empty())
+                    break;
+                else
+                {
+                    std::string userPath;
+                    std::cout<<"Ocupa un path personalizado? Si es así, escríbalo o presione enter para terminar la escritura. "; std::cin>>userPath;
+                    if(!userPath.empty())
+                        WriteConfig("userConfigName");
+                }
+
+                break;
+
+
+
+        }
+
+    }
+    while(op != 's');
+}

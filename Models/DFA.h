@@ -33,6 +33,8 @@ public:
     void AddStates(int n);
     void AddTransitions(int n);
     void WriteSymbols(int n);
+
+    void Menu();
 };
 
 
