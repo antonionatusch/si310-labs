@@ -208,10 +208,12 @@ void DFA::Menu() {
                     break;
                 else
                 {
+
+
                     std::cin.clear();
                     std::cin.ignore(256, '\n');
                     std::string userPath;
-                    std::cout<<"Ocupa un path personalizado? Si es así, escríbalo o escriba 'n' para terminar la escritura. ";  std::cin>>userPath;
+                    std::cout<<"Ocupa un path personalizado? Si es así, escríbalo o escriba 'n' para terminar la escritura. \n No se olvide de cerrar el path con un '\\' o '/' como corresponda. ";  std::cin>>userPath;
 
                     if (userPath == "n")
                     {
@@ -220,7 +222,7 @@ void DFA::Menu() {
                     }
                     else
                     {
-                        automaton.WriteConfig(userPath + configName);
+                        automaton.WriteConfig(userPath  + configName);
                         break;
                     }
 
