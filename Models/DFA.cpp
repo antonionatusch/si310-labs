@@ -217,12 +217,12 @@ void DFA::Menu() {
 
                     if (userPath == "n")
                     {
-                        automaton.WriteConfig(configName);
+                        automaton.WriteConfig(configName + ".txt");
                         break;
                     }
                     else
                     {
-                        automaton.WriteConfig(userPath  + configName);
+                        automaton.WriteConfig(userPath  + configName + ".txt");
                         break;
                     }
 
